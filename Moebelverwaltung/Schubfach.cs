@@ -50,6 +50,7 @@ namespace BBW.Moebelverwaltung
 
             set
             {
+                Console.WriteLine("KEINE AHNUNG");
                 if (value > 0 && value <= 120)
                 {
                     laenge = value;
@@ -120,17 +121,24 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Schubfach()");
         }
 
-        public Schubfach(int laenge, int breite, int hoehe, double gewicht, string farbe) {
+        //Konstruktorüberladung:
+        //gleicher Name, aber eine unterschiedliche Parameterliste        
+        //Konstruktor mit optionalen Parametern
+        // - optionale Parameter müssen immer am Ende stehen
+        public Schubfach(int laenge, int breite, int hoehe, double gewicht=1.0, string farbe = "pink")
+        {
             Console.WriteLine("Schubfach(5 Parameter)");
+            //Setzen der Länge -> Aufruf der set-Methode der Eigenschaft
             Laenge = laenge;
             Breite = breite;
             Hoehe = hoehe;
             Gewicht = gewicht;
             Farbe = farbe;
         }
+     
 
         #endregion
-        public void BerechneVolumen()
+        public double BerechneVolumen()
         {
             return Laenge*Breite*Hoehe;
         }
