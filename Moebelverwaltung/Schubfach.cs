@@ -115,10 +115,20 @@ namespace BBW.Moebelverwaltung
         #endregion
 
         #region Konstruktoren
-        public Schubfach() : this(1,1,1,1.0,"hellbraun")
+        public Schubfach() : this(30,50,20,1.0,"hellbraun")
         {
             Console.WriteLine("Schubfach()");
         }
+
+        public Schubfach(int laenge, int breite, int hoehe, double gewicht, string farbe) {
+            Console.WriteLine("Schubfach(5 Parameter)");
+            Laenge = laenge;
+            Breite = breite;
+            Hoehe = hoehe;
+            Gewicht = gewicht;
+            Farbe = farbe;
+        }
+
         #endregion
         public void BerechneVolumen()
         {
