@@ -67,10 +67,9 @@
     <Position X="12" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAACAAAAEAAAAEBAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAACAAAAEkAAAFBAAABAI=</HashCode>
       <FileName>Schubfach.cs</FileName>
     </TypeIdentifier>
   </Class>

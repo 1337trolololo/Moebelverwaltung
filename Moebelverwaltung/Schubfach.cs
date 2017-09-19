@@ -50,7 +50,7 @@ namespace BBW.Moebelverwaltung
 
             set
             {
-                Console.WriteLine("KEINE AHNUNG");
+                Console.WriteLine("set Laenge");
                 if (value > 0 && value <= 120)
                 {
                     laenge = value;
