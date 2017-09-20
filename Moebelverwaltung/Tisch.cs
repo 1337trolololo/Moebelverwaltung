@@ -20,6 +20,13 @@ namespace BBW.Moebelverwaltung
 
 
         private int anzTischbeine;
+        private int v1;
+        private int v2;
+        private int v3;
+        private double v4;
+        private string v5;
+        private Material holz;
+
         /// <summary>
         /// gibt Anzahl der Tischbeine zurück
         /// </summary>
@@ -27,7 +34,7 @@ namespace BBW.Moebelverwaltung
         {
             get { return anzTischbeine; }
 
-            //setzen der Tischbeinanzahl nur in der selben Klasse möglich
+            //Setzen der Tischbeinanzahl nur in der selben Klasse möglich
             private set
             {
                 if (value > 0 && value <= 4)
@@ -42,6 +49,21 @@ namespace BBW.Moebelverwaltung
             }
         }
 
+        //Konstruktoren der Klasse Tisch
+        public Tisch(): this(120,80,90,5.0,"",Material.Holz)
+        {
+            Console.WriteLine("Tisch()");
+        }
+
+        public Tisch(int laenge, int breite, int hoehe, double anzTischbeine, string gewicht, Material materialart)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
+            this.v4 = v4;
+            this.v5 = v5;
+            this.holz = holz;
+        }
 
         // Methode BerechnePreis() aus Moebelstueck wird überschrieben: Überschreiben von Methoden findet immer in abgeleiteter Klasse statt
         // beim Überschreiben zu beachten:

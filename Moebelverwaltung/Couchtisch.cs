@@ -10,4 +10,5 @@ namespace BBW.Moebelverwaltung
     {
         //hack: Erstellung der Eigenschaften
     }
-}2
+}
+//2
