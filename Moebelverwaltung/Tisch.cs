@@ -9,8 +9,8 @@ namespace BBW.Moebelverwaltung
     /// <summary>
     /// Klasse, die einen Tisch näher beschreibt
     /// </summary>
-
     public class Tisch : Moebelstueck
     {
+        //todo(01): Estellung der Eigenschaften
     }
 }

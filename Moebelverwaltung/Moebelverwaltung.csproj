@@ -48,6 +48,7 @@
     <Compile Include="Kommode.cs" />
     <Compile Include="Kuechenschrank.cs" />
     <Compile Include="Massagestuhl.cs" />
+    <Compile Include="Material.cs" />
     <Compile Include="Moebelstueck.cs" />
     <Compile Include="Nachttisch.cs" />
     <Compile Include="Program.cs" />

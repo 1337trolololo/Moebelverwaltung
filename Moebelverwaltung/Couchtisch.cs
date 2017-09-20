@@ -8,5 +8,6 @@ namespace BBW.Moebelverwaltung
 {
     public class Couchtisch : Tisch
     {
+        //hack: Erstellung der Eigenschaften
     }
-}
+}2

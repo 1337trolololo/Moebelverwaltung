@@ -116,6 +116,11 @@ namespace BBW.Moebelverwaltung
         #endregion
 
         #region Konstruktoren
+
+        // Weiterleitung an den Konstruktor dieser Klasse (this)
+        /// <summary>
+        /// Konstruktor, der Standardwerte setzt
+        /// </summary>
         public Schubfach() : this(30,50,10/*,1.0,"hellbraun"*/)
         {
             Console.WriteLine("Schubfach()");
@@ -135,9 +140,14 @@ namespace BBW.Moebelverwaltung
             Gewicht = gewicht;
             Farbe = farbe;
         }
-     
+
 
         #endregion
+
+        /// <summary>
+        /// berechnet das Volumen in cm³
+        /// </summary>
+        /// <returns>double - in cm³</returns>
         public double BerechneVolumen()
         {
             return Laenge*Breite*Hoehe;
