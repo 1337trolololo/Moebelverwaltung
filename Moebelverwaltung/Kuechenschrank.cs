@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BBW.Moebelverwaltung
 {
+    /// <summary>
+    /// Klasse, die einen Kuechenschrank näher beschreibt
+    /// </summary>
     public class Kuechenschrank : Schrank
     {
+
     }
 }

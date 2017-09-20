@@ -35,8 +35,8 @@ namespace BBW.Moebelverwaltung
             }
         }
 
-        //Konstruktoren der Klasse Tisch
-        public Schrank(): this(100,40,180,8,5.0,"braun",Material.Holz)
+        //Konstruktoren der Klasse Schrank
+        public Schrank(): this(100,40,180,8,5.0,"braun",Material.Stahl)
         {
             Console.WriteLine("Schrank()");
         }

@@ -28,7 +28,7 @@
       <FileName>Massagestuhl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BBW.Moebelverwaltung.Moebelstueck">
+  <Class Name="BBW.Moebelverwaltung.Moebelstueck" Collapsed="true">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEQABAEBAAAAAA=</HashCode>
@@ -56,7 +56,7 @@
       <FileName>Schreibtisch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BBW.Moebelverwaltung.Schubfach">
+  <Class Name="BBW.Moebelverwaltung.Schubfach" Collapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
