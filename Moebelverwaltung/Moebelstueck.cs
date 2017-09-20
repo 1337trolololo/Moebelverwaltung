@@ -52,12 +52,24 @@ namespace BBW.Moebelverwaltung
         public Material Materialart { get; set; }
 
         // voll implementierte Methode
+        /// <summary>
+        /// gibt einen String zurück, der angibt, in welcher Firma das Möbelstück hergestellt wird
+        /// </summary>
+        /// <param name="firma">String, der den Firmennamen enthält</param>
+        /// <returns>string - Text inkl. Firmenname</returns>
         public string Herstellen(string firma)
         {
             return string.Format("Das Möbelstück wird von Fa. {0} hergestellt", firma);
         }
 
+        // hack(1337): 57FU
+
         //4b57rak73 M37h0d3, die in abgeleiteten Klassen überschrieben werden muss
+        //Syntax: public abstract Rückgabetyp Methodenname(Parameterliste);
+        /// <summary>
+        /// berechnet den Bruttopreis
+        /// </summary>
+        /// <returns>double - Bruttopreis</returns>
         public abstract double BerechnePreis();
         
     }
