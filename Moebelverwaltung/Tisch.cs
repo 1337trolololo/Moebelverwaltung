@@ -20,12 +20,7 @@ namespace BBW.Moebelverwaltung
 
 
         private int anzTischbeine;
-        private int v1;
-        private int v2;
-        private int v3;
-        private double v4;
-        private string v5;
-        private Material holz;
+
 
         /// <summary>
         /// gibt Anzahl der Tischbeine zurück
