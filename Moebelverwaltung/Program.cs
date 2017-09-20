@@ -70,7 +70,15 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Schubfach sf4: ");
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", sf4.Laenge, sf4.Breite, sf4.Hoehe);
 
+            Tisch t1 = new Tisch();
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", t1.Laenge, t1.Breite, t1.Hoehe);
+            Console.WriteLine("Farbe: " + t1.Farbe);
+            Console.WriteLine("Material: " + t1.Materialart);
 
+            Tisch t2 = new Tisch(150,80,90, "rot");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", t2.Laenge, t2.Breite, t2.Hoehe);
+            Console.WriteLine("Farbe: " + t2.Farbe);
+            Console.WriteLine("Material: " + t2.Materialart);
         }
     }
 }

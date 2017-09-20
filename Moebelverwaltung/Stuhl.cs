@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BBW.Moebelverwaltung
 {
-    public class Stuhl :Moebelstueck
+    public class Stuhl : Moebelstueck
     {
+        public override double BerechnePreis()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

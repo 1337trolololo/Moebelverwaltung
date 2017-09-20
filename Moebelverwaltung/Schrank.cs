@@ -8,5 +8,9 @@ namespace BBW.Moebelverwaltung
 {
     public class Schrank : Moebelstueck
     {
+        public override double BerechnePreis()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

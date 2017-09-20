@@ -50,7 +50,7 @@ namespace BBW.Moebelverwaltung
         }
 
         //Konstruktoren der Klasse Tisch
-        public Tisch(): this(120,80,90,4,5.0,"",Material.Holz)
+        public Tisch(): this(120,80,90,4,5.0,"braun",Material.Holz)
         {
             Console.WriteLine("Tisch()");
         }
