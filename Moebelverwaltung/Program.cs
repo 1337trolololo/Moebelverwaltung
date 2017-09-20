@@ -90,6 +90,6 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Farbe: " + s2.Farbe);
             Console.WriteLine("Material: " + s2.Materialart);
         }
-    }
+    
     }
 }

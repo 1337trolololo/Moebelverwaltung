@@ -31,7 +31,7 @@
   <Class Name="BBW.Moebelverwaltung.Moebelstueck">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEQABAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEQABAEBAAAAAA=</HashCode>
       <FileName>Moebelstueck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,17 +42,10 @@
       <FileName>Nachttisch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BBW.Moebelverwaltung.Program" Collapsed="true">
-    <Position X="14.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="BBW.Moebelverwaltung.Schrank" Collapsed="true">
     <Position X="3.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQAAABAAAAAAA=</HashCode>
       <FileName>Schrank.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -77,15 +70,22 @@
   <Class Name="BBW.Moebelverwaltung.Stuhl" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Stuhl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BBW.Moebelverwaltung.Tisch" Collapsed="true">
     <Position X="9.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Tisch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BBW.Moebelverwaltung.Program" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
