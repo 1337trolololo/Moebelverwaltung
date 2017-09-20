@@ -46,5 +46,10 @@ namespace BBW.Moebelverwaltung
         /// </summary>
         public int Farbe { get; set; }
 
+        /// <summary>
+        /// Materialart des Möbelstückes: Holz,Stahl,Glas,Kunststoff
+        /// </summary>
+        public Material Materialart { get; set; }
+
     }
 }
