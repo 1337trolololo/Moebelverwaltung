@@ -143,5 +143,21 @@ namespace BBW.Moebelverwaltung
             return Laenge*Breite*Hoehe;
         }
 
+        //Syntax: Zugriffsmodifizierer Rückgabetyp Methodenname()
+        /// <summary>
+        /// gibt eine Kopie des aktuellen Objektes zurück
+        /// </summary>
+        /// <returns>BBW.Moebelverwaltung.Schubfach</returns>
+        public Schubfach Clone()
+        {
+            // - MemberwiseClone() ist protected und kann nur von derselben Klasse sowie allen abgeleiteten Klassen aufgerufen werden
+            // - MemberwiseClone() gibt ein Objekt vom Typ system.object zurück, d. h. Objekt muss in Kindklassenobjekt umgewandelt werden
+            // - flache Kopie: alle Werttypen direkt kopiert, bei den Referenztypen nur die Referenzvariablen
+            Schubfach sf1 = (Schubfach)MemberwiseClone();
+            // string.Copy() gibt eine Kopie des übergebenen Strings zurück
+            sf1.Farbe = string.Copy(Farbe);
+            return sf1;
+        }
+
     }
 }

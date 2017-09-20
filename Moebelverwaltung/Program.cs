@@ -16,6 +16,7 @@ namespace BBW.Moebelverwaltung
             Schubfach sf1;
 
             //Erzeugung eines Objektes (Instanz) der Klasse Schubfach
+            //Aufruf des Konstruktors ohne Parameter
             sf1 = new Schubfach();
 
             //Nutzung des Konstruktors mit optionalen Parametern
@@ -53,7 +54,23 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Farbe: " + sf3.Farbe);
             Console.WriteLine("Volumen {0:F3} cm³", sf3.BerechneVolumen());
 
-           
+            Schubfach sf4 = sf3.Clone();
+
+            Console.WriteLine("Schubfach sf3: ");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", sf3.Laenge, sf3.Breite, sf3.Hoehe);
+
+            Console.WriteLine("Schubfach sf4: ");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", sf4.Laenge, sf4.Breite, sf4.Hoehe);
+
+            sf4.Laenge = 80;
+
+            Console.WriteLine("Schubfach sf3: ");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", sf3.Laenge, sf3.Breite, sf3.Hoehe);
+
+            Console.WriteLine("Schubfach sf4: ");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", sf4.Laenge, sf4.Breite, sf4.Hoehe);
+
+
         }
     }
 }
