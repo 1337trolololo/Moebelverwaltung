@@ -116,7 +116,7 @@ namespace BBW.Moebelverwaltung
         #endregion
 
         #region Konstruktoren
-        public Schubfach() : this(30,50,20,1.0,"hellbraun")
+        public Schubfach() : this(30,50,10/*,1.0,"hellbraun"*/)
         {
             Console.WriteLine("Schubfach()");
         }

@@ -66,7 +66,7 @@
   <Class Name="BBW.Moebelverwaltung.Schubfach">
     <Position X="12" Y="0.5" Width="1.5" />
     <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAACAAAAEkAAAFBAAABAI=</HashCode>
