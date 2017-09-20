@@ -42,9 +42,14 @@ namespace BBW.Moebelverwaltung
         public int Hoehe { get; set; }
 
         /// <summary>
+        /// Gewicht des Möbelstückes in kg
+        /// </summary>
+        public double Gewicht { get; set; }
+
+        /// <summary>
         /// Farbe des Möbelstückes
         /// </summary>
-        public int Farbe { get; set; }
+        public string Farbe { get; set; }
 
         /// <summary>
         /// Materialart des Möbelstückes: Holz,Stahl,Glas,Kunststoff

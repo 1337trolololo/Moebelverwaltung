@@ -50,19 +50,28 @@ namespace BBW.Moebelverwaltung
         }
 
         //Konstruktoren der Klasse Tisch
-        public Tisch(): this(120,80,90,5.0,"",Material.Holz)
+        public Tisch(): this(120,80,90,4,5.0,"",Material.Holz)
         {
             Console.WriteLine("Tisch()");
         }
 
-        public Tisch(int laenge, int breite, int hoehe, double anzTischbeine, string gewicht, Material materialart)
+        public Tisch(int laenge, int breite, int hoehe, string farbe) : this(laenge: laenge, breite: breite, hoehe: hoehe, farbe: farbe, gewicht:7.0, materialart:Material.Holz, anzTischbeine:4)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-            this.holz = holz;
+
+        }
+      
+
+        public Tisch(int laenge, int breite, int hoehe, int anzTischbeine, double gewicht, string farbe, Material materialart)
+        {
+            Console.WriteLine("Tisch(7 Parameter)");
+            // Zuweisung der lokalen Variable laenge an die Eigenschaft Laenge
+            Laenge = laenge;
+            Breite = breite;
+            Hoehe = hoehe;
+            AnzTischbeine = anzTischbeine;
+            Gewicht = gewicht;
+            Farbe = farbe;
+            Materialart = materialart;
         }
 
         // Methode BerechnePreis() aus Moebelstueck wird überschrieben: Überschreiben von Methoden findet immer in abgeleiteter Klasse statt
