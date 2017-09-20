@@ -80,15 +80,15 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Farbe: " + t2.Farbe);
             Console.WriteLine("Material: " + t2.Materialart);
 
-            Schrank s1 = new Tisch();
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", t1.Laenge, t1.Breite, t1.Hoehe);
-            Console.WriteLine("Farbe: " + t1.Farbe);
-            Console.WriteLine("Material: " + t1.Materialart);
+            Schrank s1 = new Schrank();
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s1.Laenge, s1.Breite, s1.Hoehe);
+            Console.WriteLine("Farbe: " + s1.Farbe);
+            Console.WriteLine("Material: " + s1.Materialart);
 
-            Schrank s2 = new Schrank(150, 80, 90, "pink");
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", t2.Laenge, t2.Breite, t2.Hoehe);
-            Console.WriteLine("Farbe: " + t2.Farbe);
-            Console.WriteLine("Material: " + t2.Materialart);
+            Schrank s2 = new Schrank(100, 50, 200, "pink");
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s2.Laenge, s2.Breite, s2.Hoehe);
+            Console.WriteLine("Farbe: " + s2.Farbe);
+            Console.WriteLine("Material: " + s2.Materialart);
         }
     }
     }
