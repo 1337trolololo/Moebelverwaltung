@@ -57,7 +57,7 @@ namespace BBW.Moebelverwaltung
 
         public Tisch(int laenge, int breite, int hoehe, string farbe) : this(laenge: laenge, breite: breite, hoehe: hoehe, farbe: farbe, gewicht:7.0, materialart:Material.Holz, anzTischbeine:4)
         {
-
+            Console.WriteLine("Tisch(4 Parameter)");
         }
       
 
