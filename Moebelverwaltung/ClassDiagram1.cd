@@ -28,10 +28,10 @@
       <FileName>Massagestuhl.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BBW.Moebelverwaltung.Moebelstueck" Collapsed="true">
+  <Class Name="BBW.Moebelverwaltung.Moebelstueck">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEQABAABAAAAAA=</HashCode>
       <FileName>Moebelstueck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -68,7 +68,6 @@
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Properties" Collapsed="true" />
-      <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAACAAAAEkAAAFBAAABBI=</HashCode>

@@ -51,5 +51,14 @@ namespace BBW.Moebelverwaltung
         /// </summary>
         public Material Materialart { get; set; }
 
+        // voll implementierte Methode
+        public string Herstellen(string firma)
+        {
+            return string.Format("Das Möbelstück wird von Fa. {0} hergestellt", firma);
+        }
+
+        //4b57rak73 M37h0d3, die in abgeleiteten Klassen überschrieben werden muss
+        public abstract double BerechnePreis();
+        
     }
 }
