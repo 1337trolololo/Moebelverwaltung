@@ -86,8 +86,20 @@ namespace BBW.Moebelverwaltung
 
         // Überladen von Methoden:
         // beim Überladen zu beachten:
-        //
+        // - nur die Signatur der Methode (Name, Parameterliste) betrachtet)
+        // - Rückgabetyp und Zugriffsmodifizierer nicht betrachtet
+        // - gleicher Name
+        // - unterschiedliche Parameterliste:
+        //   - eine unterschiedliche Anzahl von Parametern
+        //   - unterschiedliche Datentypen der Parameter
+        //   - eine unterschiedliche Reihenfolge der Parameter, wenn die Datentypen unterschiedlich sind
 
+        /// <summary>
+        /// schneidet die Tischoberfläche entsprechend zu,
+        /// ändert Länge und Breite des Tischobjektes, für das 
+        /// die Methode Aendern() aufgerufen wird
+        /// </summary>
+        /// <param name="lang">neuer Wert für Länge und Breite</param>
         public void Aendern(int lang)
         {
             Console.WriteLine("Aendern(int)");
@@ -95,5 +107,94 @@ namespace BBW.Moebelverwaltung
             Breite = lang;
         }
 
+        public void Aendern(int lang, int breit)
+        {
+            Console.WriteLine("Aendern(int, int)");
+            Laenge = lang;
+            Breite = breit;
+        }
+
+        public void Aendern(string lang, string breit)
+        {
+            Console.WriteLine("Aendern(string, string)");
+            // Nutzung der Klasse Convert, um Zeichenketten zu konvertieren
+            // Klasse Convert hat statische Methoden; Klassenname.Methodenname()
+            Laenge = Convert.ToInt32(lang);
+            //Nutzug der Struktur Int32 -> statische Methode Parse() verwendet
+            Breite = int.Parse(breit);
+        }
+
+        public void Aendern(int lang, string breit)
+        {
+            Console.WriteLine("Aendern(int, string)");
+
+            Laenge = lang;
+
+            int breite = 0;
+            // TryParse() gibt true oder false zurück
+            // der Ausgabeparameter enthält Zahlenwerte (0 im Fehlerfall)
+            if (int.TryParse(breit, out breite))
+            {
+                Console.WriteLine("Konvertierung erfolgreich");
+                
+            }
+            else
+            {
+                Console.WriteLine("Konvertierung fehlgeschlagen");
+            }
+            Breite = breite;
+
+
+
+        }
+
+        public void Aendern(string breit, int lang)
+        {
+            Console.WriteLine("Aendern(string, int)");
+
+            Laenge = lang;
+
+            int breite = 0;
+            if (int.TryParse(breit, out breite))
+            {
+                Console.WriteLine("Konvertierung erfolgreich");
+                Breite = breite;
+            }
+            else
+            {
+                Console.WriteLine("Konvertierung fehlgeschlagen");
+            }
+        }
+
+        // ungültiges Überladen:
+        // da sich die Methode Aendern(string, int) nur durch den Rückgabetyp (statt void wird bool verwendet) unterscheidet,
+        // ist es eine ungültige Überladung -> Compilerfehler
+        //public bool Aendern(string breit, int lang){}
+
+        // mögliche Fehlerkorrekturen: Änderung des Namens oder der Parameterliste, wird der Name geändert ist es eine komplett
+        // neue Methode (Aendern2 statt Aendern)
+
+        public bool Aendern2(string breit, int lang)
+        {
+            Console.WriteLine("Aendern2(string, int)");
+
+            Laenge = lang;
+
+            int breite = 0;
+            if (int.TryParse(breit, out breite))
+            {
+                Console.WriteLine("Konvertierung erfolgreich");
+                Breite = breite;
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Konvertierung fehlgeschlagen");
+                return false;
+            }
+
+
+
+        }
     }
 }
