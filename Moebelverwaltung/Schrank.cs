@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 namespace BBW.Moebelverwaltung
 {
     /// <summary>
-    /// Klasse, die einen Schrank näher beschreibt
+    /// Klasse, die einen Standardschrank näher beschreibt
     /// </summary>    
     public class Schrank : Moebelstueck
     {
+
+        // Datentyp uint: unsigned int: Ganzzahl ohne Vorzeichen
+        public uint AnzEinlegeboeden { get; set; }
+               
+
         private int anzSchranktueren;
         
         /// <summary>
         /// gibt Anzahl der Schranktüren zurück
         /// </summary>
         public int AnzSchranktueren
-        {
+        {            
             get { return anzSchranktueren; }
 
             //Setzen der Schranktueren nur in der selben Klasse möglich
@@ -36,33 +41,64 @@ namespace BBW.Moebelverwaltung
         }
 
         //Konstruktoren der Klasse Schrank
-        public Schrank(): this(100,40,180,8,5.0,"braun",Material.Kunststoff)
+
+        public Schrank() : this(150, 100, 180, 10.0, "braun", Material.Holz, 6)
         {
             Console.WriteLine("Schrank()");
         }
 
-        public Schrank(int laenge, int breite, int hoehe, string farbe) : this(laenge: laenge, breite: breite, hoehe: hoehe, farbe: farbe, gewicht:7.0, materialart:Material.Holz, anzSchranktueren:7)
+        public Schrank(int laenge, int breite, int hoehe) : this(laenge, breite, hoehe, 10.0, "braun", Material.Holz, 6)
         {
-            Console.WriteLine("Schrank(4 Parameter)");
+            Console.WriteLine("Schrank(int, int, int)");
         }
 
-
-        public Schrank(int laenge, int breite, int hoehe, int anzSchranktueren, double gewicht, string farbe, Material materialart)
+                
+        public Schrank(int laenge, int breite, int hoehe, double gewicht, string farbe, Material materialart, uint anzBoeden) : base(laenge, breite, hoehe, gewicht, farbe, materialart)
         {
-            Console.WriteLine("Schrank(7 Parameter)");
+            // ^ Weiterleitung an den Konstruktor der direkten Basisklasse,
+            // wird weder base noch this angegeben, wird an den Konstruktor der Basisklasse weitergeleitet, der keine Parameter hat
+            // this() -> DIESE-Klasse
+            // base() -> BASIS-Klasse
+            Console.WriteLine("Schrank(alle PArameter)");
+
             // Zuweisung der lokalen Variable laenge an die Eigenschaft Laenge
-            Laenge = laenge;
-            Breite = breite;
-            Hoehe = hoehe;
-            AnzSchranktueren = anzSchranktueren;
-            Gewicht = gewicht;
-            Farbe = farbe;
-            Materialart = materialart;
+            //Laenge = laenge;
+            //Breite = breite;
+            //Hoehe = hoehe;
+            //Gewicht = gewicht;
+            //Farbe = farbe;
+            //Materialart = materialart;
+            AnzEinlegeboeden = anzBoeden;
+
         }
+
+        //public Schrank() : this(100, 40, 180, 8, 5.0, "braun", Material.Kunststoff)
+        //{
+        //    Console.WriteLine("Schrank()");
+        //}
+
+        //public Schrank(int laenge, int breite, int hoehe, string farbe) : this(laenge: laenge, breite: breite, hoehe: hoehe, farbe: farbe, gewicht:7.0, materialart:Material.Holz, anzSchranktueren:7)
+        //{
+        //    Console.WriteLine("Schrank(4 Parameter)");
+        //}
+
+
+        //public Schrank(int laenge, int breite, int hoehe, int anzSchranktueren, double gewicht, string farbe, Material materialart)
+        //{
+        //    Console.WriteLine("Schrank(7 Parameter)");
+        //    // Zuweisung der lokalen Variable laenge an die Eigenschaft Laenge
+        //    Laenge = laenge;
+        //    Breite = breite;
+        //    Hoehe = hoehe;
+        //    AnzSchranktueren = anzSchranktueren;
+        //    Gewicht = gewicht;
+        //    Farbe = farbe;
+        //    Materialart = materialart;
+        //}
 
         public override double BerechnePreis()
         {
-            return 0.99;
+            return 0.0;
         }
     }
 }

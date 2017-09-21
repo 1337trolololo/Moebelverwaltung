@@ -8,5 +8,7 @@ namespace BBW.Moebelverwaltung
 {
     public class Massagestuhl : Stuhl
     {
+        
+
     }
 }

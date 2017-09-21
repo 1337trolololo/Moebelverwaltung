@@ -56,17 +56,20 @@ namespace BBW.Moebelverwaltung
         }
       
 
-        public Tisch(int laenge, int breite, int hoehe, int anzTischbeine, double gewicht, string farbe, Material materialart)
+        public Tisch(int laenge, int breite, int hoehe, int anzTischbeine, double gewicht, string farbe, Material materialart) : base(laenge, breite, hoehe, gewicht, farbe, materialart)
         {
+            // ^ Weiterleitung an den Konstruktor der direkten Basisklasse,
+            // wird weder base noch this angegeben, wird an den Konstruktor der Basisklasse weitergeleitet, der keine Parameter hat
+
             Console.WriteLine("Tisch(7 Parameter)");
             // Zuweisung der lokalen Variable laenge an die Eigenschaft Laenge
-            Laenge = laenge;
-            Breite = breite;
-            Hoehe = hoehe;
+            //Laenge = laenge;
+            //Breite = breite;
+            //Hoehe = hoehe;
             AnzTischbeine = anzTischbeine;
-            Gewicht = gewicht;
-            Farbe = farbe;
-            Materialart = materialart;
+            //Gewicht = gewicht;
+            //Farbe = farbe;
+            //Materialart = materialart;
         }
 
         // Methode BerechnePreis() aus Moebelstueck wird überschrieben: Überschreiben von Methoden findet immer in abgeleiteter Klasse statt

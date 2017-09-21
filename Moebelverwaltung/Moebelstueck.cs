@@ -14,6 +14,7 @@ namespace BBW.Moebelverwaltung
     // Klasse mus abgeleitet (vererbt) werden
     public abstract class Moebelstueck
     {
+        #region Eigenschaften
         //generierter Code mittels Code-Snippet propfull + 2xTab
         private int laenge;        
         /// <summary>
@@ -55,6 +56,18 @@ namespace BBW.Moebelverwaltung
         /// Materialart des Möbelstückes: Holz,Stahl,Glas,Kunststoff
         /// </summary>
         public Material Materialart { get; set; }
+        #endregion
+
+        protected Moebelstueck(int laenge, int breite, int hoehe, double gewicht, string farbe, Material materialart)
+        {
+            Console.WriteLine("Moebelstueck(alle Parameter)");
+            Laenge = laenge;
+            Breite = breite;
+            Hoehe = hoehe;
+            Gewicht = gewicht;
+            Farbe = farbe;
+            Materialart = materialart;
+        }
 
         // voll implementierte Methode
         /// <summary>
