@@ -80,35 +80,37 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Farbe: " + t2.Farbe);
             Console.WriteLine("Material: " + t2.Materialart);
 
+            ////Schrank s1 = new Schrank();
+            ////Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s1.Laenge, s1.Breite, s1.Hoehe);
+            ////Console.WriteLine("Farbe: " + s1.Farbe);
+            ////Console.WriteLine("Material: " + s1.Materialart);
+            ////Console.WriteLine("Anzahl der Türen: " + s1.Anz.Schranktueren);
+
+            ////Schrank s2 = new Schrank(100, 50, 200, "pink");
+            ////Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s2.Laenge, s2.Breite, s2.Hoehe);
+            ////Console.WriteLine("Farbe: " + s2.Farbe);
+            ////Console.WriteLine("Material: " + s2.Materialart);
+            ////Console.WriteLine("Anzahl der Türen: " + s2.Anz.Schranktueren);
+
             //Schrank s1 = new Schrank();
             //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s1.Laenge, s1.Breite, s1.Hoehe);
             //Console.WriteLine("Farbe: " + s1.Farbe);
-            //Console.WriteLine("Material: " + s1.Materialart);
-            //Console.WriteLine("Anzahl der Türen: " + s1.Anz.Schranktueren);
+            //Console.WriteLine("Materialart: " + s1.Materialart);
+            //Console.WriteLine("Anzahl Einlegeböden: " + s1.AnzEinlegeboeden);
 
-            //Schrank s2 = new Schrank(100, 50, 200, "pink");
+            //Schrank s2 = new Schrank(220, 100, 180);
             //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s2.Laenge, s2.Breite, s2.Hoehe);
             //Console.WriteLine("Farbe: " + s2.Farbe);
-            //Console.WriteLine("Material: " + s2.Materialart);
-            //Console.WriteLine("Anzahl der Türen: " + s2.Anz.Schranktueren);
+            //Console.WriteLine("Materialart: " + s2.Materialart);
+            //Console.WriteLine("Anzahl Einlegeböden: " + s2.AnzEinlegeboeden);
 
-            Schrank s1 = new Schrank();
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s1.Laenge, s1.Breite, s1.Hoehe);
-            Console.WriteLine("Farbe: " + s1.Farbe);
-            Console.WriteLine("Materialart: " + s1.Materialart);
-            Console.WriteLine("Anzahl Einlegeböden: " + s1.AnzEinlegeboeden);
-            
-            Schrank s2 = new Schrank(220, 100, 180);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s2.Laenge, s2.Breite, s2.Hoehe);
-            Console.WriteLine("Farbe: " + s2.Farbe);
-            Console.WriteLine("Materialart: " + s2.Materialart);
-            Console.WriteLine("Anzahl Einlegeböden: " + s2.AnzEinlegeboeden);
+            //Schrank s3 = new Schrank(250, 100, 200, 12.0, "beige", Material.Kunststoff, 10);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s3.Laenge, s3.Breite, s3.Hoehe);
+            //Console.WriteLine("Farbe: " + s3.Farbe);
+            //Console.WriteLine("Materialart: " + s3.Materialart);
+            //Console.WriteLine("Anzahl Einlegeböden: " + s3.AnzEinlegeboeden);
 
-            Schrank s3 = new Schrank(250, 100, 200, 12.0, "beige", Material.Kunststoff, 10);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", s3.Laenge, s3.Breite, s3.Hoehe);
-            Console.WriteLine("Farbe: " + s3.Farbe);
-            Console.WriteLine("Materialart: " + s3.Materialart);
-            Console.WriteLine("Anzahl Einlegeböden: " + s3.AnzEinlegeboeden);
+            Tisch neuerTisch = new Tisch();
 
         }
 

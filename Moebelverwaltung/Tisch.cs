@@ -83,5 +83,17 @@ namespace BBW.Moebelverwaltung
         {
             return 0.0;
         }
+
+        // Überladen von Methoden:
+        // beim Überladen zu beachten:
+        //
+
+        public void Aendern(int lang)
+        {
+            Console.WriteLine("Aendern(int)");
+            Laenge = lang;
+            Breite = lang;
+        }
+
     }
 }
