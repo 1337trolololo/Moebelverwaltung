@@ -112,7 +112,7 @@ namespace BBW.Moebelverwaltung
 
             Tisch neuerTisch = new Tisch();
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-            
+
             // Aufruf der Methode Aendern()
             neuerTisch.Aendern(80);
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
@@ -131,7 +131,7 @@ namespace BBW.Moebelverwaltung
             //Aufruf der überladenen Methode Aendern(int, string)
             neuerTisch.Aendern(110, "95e");
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-           
+
             //Aufruf der überladenen Methode Aendern(string, int)
             neuerTisch.Aendern("80", 100);
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
@@ -151,6 +151,27 @@ namespace BBW.Moebelverwaltung
                 Console.WriteLine("Breite nicht geändert!");
                 Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
             }
+
+            Schrank neuerSchrank = new Schrank();
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+
+            // Aufruf der Methode Aendern()
+            neuerSchrank.Aendern(120, 200);
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+
+            //Aufruf der überladenen Methode Aendern() mit 2 Parametern
+            neuerSchrank.Aendern(210);
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+
+            //Aufruf der überladenen Methode Aendern() mit 2 Parametern
+            neuerSchrank.Aendern(180);
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+
+            // Aufruf der überschriebenen Methode Herstellen von Tisch
+            Console.WriteLine(neuerTisch.Herstellen("Ikea"));
+            //Aufruf der geerbten MEthode Herstellen von SchrAnk
+            Schrank schrank = new Schrank();
+            Console.WriteLine(schrank.Herstellen("Ikea"));
         }
     }
 }

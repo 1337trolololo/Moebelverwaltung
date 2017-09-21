@@ -100,5 +100,28 @@ namespace BBW.Moebelverwaltung
         {
             return 0.0;
         }
+
+        public void Aendern(int breit, int hoch)
+        {
+            Console.WriteLine("Aendern(int, int)");
+            Hoehe = hoch;
+            Breite = breit;
+        }
+
+        public void Aendern(int hoch)
+        {
+            Console.WriteLine("Aendern(int)");
+
+            if (Hoehe > hoch)
+            {
+                Console.WriteLine("Neue Hoehe kleiner als alte Höhe. Wert wird geändert!");
+                Hoehe = hoch;
+            }
+            else
+            {
+                Console.WriteLine("Alte Hoehe ist nicht kleiner als neue Hoehe. Wert bleibt unverändert!");
+            }
+            
+        }
     }
 }

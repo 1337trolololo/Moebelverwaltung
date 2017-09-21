@@ -75,9 +75,9 @@ namespace BBW.Moebelverwaltung
         /// </summary>
         /// <param name="firma">String, der den Firmennamen enthält</param>
         /// <returns>string - Text inkl. Firmenname</returns>
-        public string Herstellen(string firma)
+        public virtual string Herstellen(string firma) // virtual kennzeichnet eine Methode als überschreibbar
         {
-            return string.Format("Das Möbelstück wird von Fa. {0} hergestellt", firma);
+            return string.Format("Das Möbelstück wird von Fa. {0} hergestellt. ", firma);
         }
 
         // hack(1337): 57FU

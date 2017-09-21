@@ -192,9 +192,28 @@ namespace BBW.Moebelverwaltung
                 Console.WriteLine("Konvertierung fehlgeschlagen");
                 return false;
             }
+        }
 
+        // eine nicht abstrakte Methode aus Moebelstueck überschreiben:
+        // public string Herstellen(string firma){}
+        // Methode, die in abgeleiteter Methode überschrieben werden soll,
+        // muss in der Basisklasse mit virtual versehen werden
+        // beim Überschreiben zu beachten:
+        // - in Basisklasse Methode mit virtual versehen
+        // - in abgeleiteter Klasse MEthode mit override versehen
+        // - gleicher Name
+        // - gleicher Rückgabetyp
+        // - gleiche Parameterliste (Anzahl und Datentpen müssen identisch sein)
+        // - der gleiche oder ein breiterer Zugriffsmodifizierer
 
-
+        public override string Herstellen(string firma)
+        {
+            // mittels base.Methodenname Zugriff auf die gleichnamige Methode der Basisklasse
+            string text = base.Herstellen(firma);
+            // neuen Text an den String anhängen
+            // text = text + "Der Firmensitz ist in Dresden."
+            text += "Der Firmensitz ist in Dresden.";
+            return text;
         }
     }
 }
