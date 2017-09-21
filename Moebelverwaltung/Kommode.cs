@@ -13,12 +13,6 @@ namespace BBW.Moebelverwaltung
         {
             Console.WriteLine("Kommode()");
 
-            //Schubfach sf1 = new Schubfach();
-            //Schubfach sf2 = new Schubfach();
-            //Schubfach sf3 = new Schubfach();
-            //Schubfach sf4 = new Schubfach();
-
-            //Schubfach[] schubfaecher = new Schubfach[] { sf1, sf2, sf3, sf4};
 
         }
 
@@ -28,6 +22,8 @@ namespace BBW.Moebelverwaltung
             // wird weder base noch this angegeben, wird an den Konstruktor der Basisklasse weitergeleitet, der keine Parameter hat
 
             Console.WriteLine("Kommode(alle Parameter)");
+
+         
             Schubfaecher = schubfaecher;
         }
 
@@ -47,8 +43,36 @@ namespace BBW.Moebelverwaltung
             string text = base.Herstellen(firma);
             // neuen Text an den String anhängen
             // text = text + "Der Firmensitz ist in Dresden."
-            text = "Die Kommode wurde von " + firma + " in: " + ort + " hergestellt.";
+            text = "Die Kommode wurde von " + firma + " in " + ort + " hergestellt.";
             return text;
+        }
+
+        public override double BerechnePreis()
+        {
+            double materialPreis, gesamtPreis;
+
+            switch (this.Materialart)
+            {
+                case Material.Holz:
+                    materialPreis = 13.37;                    
+                    break;
+                case Material.Stahl:
+                    materialPreis = 19.99;
+                    break;
+                case Material.Glas:
+                    materialPreis = 5.55;
+                    break;
+                case Material.Kunststoff:
+                    materialPreis = 9.99;
+                    break;
+                default:
+                    materialPreis = 1.0;
+                    break;
+            }
+
+            gesamtPreis = this.Schubfaecher.Count * materialPreis;
+            gesamtPreis = gesamtPreis + (gesamtPreis * 0.19);
+            return gesamtPreis;
         }
 
     }

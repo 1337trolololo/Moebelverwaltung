@@ -179,8 +179,18 @@ namespace BBW.Moebelverwaltung
             kom.Schubfaecher.Add(new Schubfach());
             Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom.Laenge, kom.Breite, kom.Hoehe);
             Console.WriteLine("Anzahl Schubfächer: "+kom.Schubfaecher.Count);
+            Console.WriteLine(kom.Herstellen("koMModen AG", "Dresden"));
+            Console.WriteLine(kom.BerechnePreis());
 
-            kom.Herstellen(koMModen AG)
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+
+            Kommode kom2 = new Kommode(100,50,70,12.0,"pink",Material.Kunststoff,4, new List<Schubfach> { new Schubfach() });
+            kom2.Schubfaecher.Add(new Schubfach());
+            kom2.Schubfaecher.Add(new Schubfach());
+            kom2.Schubfaecher.Add(new Schubfach());
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom2.Laenge, kom2.Breite, kom2.Hoehe);
+            Console.WriteLine("Anzahl Schubfächer: " + kom2.Schubfaecher.Count);           
+            Console.WriteLine(kom2.BerechnePreis());
         }
     }
 }
