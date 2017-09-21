@@ -110,68 +110,77 @@ namespace BBW.Moebelverwaltung
             //Console.WriteLine("Materialart: " + s3.Materialart);
             //Console.WriteLine("Anzahl Einlegeböden: " + s3.AnzEinlegeboeden);
 
-            Tisch neuerTisch = new Tisch();
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            //Tisch neuerTisch = new Tisch();
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            // Aufruf der Methode Aendern()
-            neuerTisch.Aendern(80);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            //// Aufruf der Methode Aendern()
+            //neuerTisch.Aendern(80);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern() mit 2 Parametern
-            neuerTisch.Aendern(100, 90);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern() mit 2 Parametern
+            //neuerTisch.Aendern(100, 90);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern() mit 2 string-Parametern
-            neuerTisch.Aendern("120", "100");
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern() mit 2 string-Parametern
+            //neuerTisch.Aendern("120", "100");
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern(int, string)
-            neuerTisch.Aendern(110, "95");
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-            //Aufruf der überladenen Methode Aendern(int, string)
-            neuerTisch.Aendern(110, "95e");
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern(int, string)
+            //neuerTisch.Aendern(110, "95");
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern(int, string)
+            //neuerTisch.Aendern(110, "95e");
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern(string, int)
-            neuerTisch.Aendern("80", 100);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-            //Aufruf der überladenen Methode Aendern(string, int)
-            neuerTisch.Aendern("75a", 110);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern(string, int)
+            //neuerTisch.Aendern("80", 100);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            ////Aufruf der überladenen Methode Aendern(string, int)
+            //neuerTisch.Aendern("75a", 110);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern2(string, int)
-            bool ergebnis = neuerTisch.Aendern2("150", 120);
-            if (ergebnis)
-            {
-                Console.WriteLine("Neuer Tisch erfolgreich gebaut:");
-                Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-            }
-            else
-            {
-                Console.WriteLine("Breite nicht geändert!");
-                Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
-            }
+            ////Aufruf der überladenen Methode Aendern2(string, int)
+            //bool ergebnis = neuerTisch.Aendern2("150", 120);
+            //if (ergebnis)
+            //{
+            //    Console.WriteLine("Neuer Tisch erfolgreich gebaut:");
+            //    Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Breite nicht geändert!");
+            //    Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerTisch.Laenge, neuerTisch.Breite, neuerTisch.Hoehe);
+            //}
 
-            Schrank neuerSchrank = new Schrank();
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+            //Schrank neuerSchrank = new Schrank();
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
 
-            // Aufruf der Methode Aendern()
-            neuerSchrank.Aendern(120, 200);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+            //// Aufruf der Methode Aendern()
+            //neuerSchrank.Aendern(120, 200);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern() mit 2 Parametern
-            neuerSchrank.Aendern(210);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+            ////Aufruf der überladenen Methode Aendern() mit 2 Parametern
+            //neuerSchrank.Aendern(210);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
 
-            //Aufruf der überladenen Methode Aendern() mit 2 Parametern
-            neuerSchrank.Aendern(180);
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
+            ////Aufruf der überladenen Methode Aendern() mit 2 Parametern
+            //neuerSchrank.Aendern(180);
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", neuerSchrank.Laenge, neuerSchrank.Breite, neuerSchrank.Hoehe);
 
-            // Aufruf der überschriebenen Methode Herstellen von Tisch
-            Console.WriteLine(neuerTisch.Herstellen("Ikea"));
-            //Aufruf der geerbten MEthode Herstellen von SchrAnk
-            Schrank schrank = new Schrank();
-            Console.WriteLine(schrank.Herstellen("Ikea"));
+            //// Aufruf der überschriebenen Methode Herstellen von Tisch
+            //Console.WriteLine(neuerTisch.Herstellen("Ikea"));
+            ////Aufruf der geerbten MEthode Herstellen von SchrAnk
+            //Schrank schrank = new Schrank();
+            //Console.WriteLine(schrank.Herstellen("Ikea"));
+
+            Kommode kom = new Kommode();
+            kom.Schubfaecher.Add(new Schubfach());
+            kom.Schubfaecher.Add(new Schubfach());
+            kom.Schubfaecher.Add(new Schubfach());
+            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom.Laenge, kom.Breite, kom.Hoehe);
+            Console.WriteLine("Anzahl Schubfächer: "+kom.Schubfaecher.Count);
+
+            kom.Herstellen(koMModen AG)
         }
     }
 }
