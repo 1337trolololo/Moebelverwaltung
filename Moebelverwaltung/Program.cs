@@ -173,24 +173,35 @@ namespace BBW.Moebelverwaltung
             //Schrank schrank = new Schrank();
             //Console.WriteLine(schrank.Herstellen("Ikea"));
 
+            //Kommode kom = new Kommode();
+            //kom.Schubfaecher.Add(new Schubfach());
+            //kom.Schubfaecher.Add(new Schubfach());
+            //kom.Schubfaecher.Add(new Schubfach());
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom.Laenge, kom.Breite, kom.Hoehe);
+            //Console.WriteLine("Anzahl Schubfächer: "+kom.Schubfaecher.Count);
+            //Console.WriteLine(kom.Herstellen("koMModen AG", "Dresden"));
+            //Console.WriteLine(kom.BerechnePreis());
+
+            //Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+
+            //Kommode kom2 = new Kommode(100,50,70,12.0,"pink",Material.Kunststoff,4, new List<Schubfach> { new Schubfach() });
+            //kom2.Schubfaecher.Add(new Schubfach());
+            //kom2.Schubfaecher.Add(new Schubfach());
+            //kom2.Schubfaecher.Add(new Schubfach());
+            //Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom2.Laenge, kom2.Breite, kom2.Hoehe);
+            //Console.WriteLine("Anzahl Schubfächer: " + kom2.Schubfaecher.Count);           
+            //Console.WriteLine(kom2.BerechnePreis());
+
             Kommode kom = new Kommode();
-            kom.Schubfaecher.Add(new Schubfach());
-            kom.Schubfaecher.Add(new Schubfach());
-            kom.Schubfaecher.Add(new Schubfach());
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom.Laenge, kom.Breite, kom.Hoehe);
-            Console.WriteLine("Anzahl Schubfächer: "+kom.Schubfaecher.Count);
-            Console.WriteLine(kom.Herstellen("koMModen AG", "Dresden"));
-            Console.WriteLine(kom.BerechnePreis());
+            Console.WriteLine("Preis: {0:F2} EUR", kom.BerechnePreis());
+            Console.WriteLine(kom.Herstellen("Ikea"));
+            Console.WriteLine(kom.Herstellen("Ikea", "Düsseldorf"));
 
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+            Schubfach schubfach1 = new Schubfach(30, 40, 10, 1, "grün");
+            Kommode kom2 = new Kommode(120, 40, 100,3.0,"weiß", Material.Holz,3,schubfach1, schubfach1, schubfach1, schubfach1);
+            Console.WriteLine("alle Schubfächer haben folgende Maße:");
+            Console.WriteLine("Schubfach: {0} cm x {1} cm x {2} cm", kom2.Schubfach1.Laenge, kom2.Schubfach1.Breite, kom2.Schubfach1.Hoehe);
 
-            Kommode kom2 = new Kommode(100,50,70,12.0,"pink",Material.Kunststoff,4, new List<Schubfach> { new Schubfach() });
-            kom2.Schubfaecher.Add(new Schubfach());
-            kom2.Schubfaecher.Add(new Schubfach());
-            kom2.Schubfaecher.Add(new Schubfach());
-            Console.WriteLine("Maße: {0} cm x {1} cm x {2} cm", kom2.Laenge, kom2.Breite, kom2.Hoehe);
-            Console.WriteLine("Anzahl Schubfächer: " + kom2.Schubfaecher.Count);           
-            Console.WriteLine(kom2.BerechnePreis());
         }
     }
 }

@@ -215,5 +215,8 @@ namespace BBW.Moebelverwaltung
             text += "Der Firmensitz ist in Dresden.";
             return text;
         }
+
+        //Methode ToString() aus Object überschreiben, um das aktuelle Objekt als String zurückzugeben
+        //String in allen grafischen Anwendungen benötigt
     }
 }
