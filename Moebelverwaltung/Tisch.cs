@@ -218,5 +218,15 @@ namespace BBW.Moebelverwaltung
 
         //Methode ToString() aus Object überschreiben, um das aktuelle Objekt als String zurückzugeben
         //String in allen grafischen Anwendungen benötigt
+        public override string ToString()
+        {
+
+            string text = string.Format("Maße: {0} cm x {1} cm x {2} cm", Laenge, Breite, Hoehe);
+            
+            //Console.WriteLine("Farbe: " + t1.Farbe);
+            //Console.WriteLine("Material: " + t1.Materialart);
+
+            return base.ToString();
+        }
     }
 }

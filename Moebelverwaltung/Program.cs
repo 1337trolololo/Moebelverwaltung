@@ -202,6 +202,8 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("alle Schubfächer haben folgende Maße:");
             Console.WriteLine("Schubfach: {0} cm x {1} cm x {2} cm", kom2.Schubfach1.Laenge, kom2.Schubfach1.Breite, kom2.Schubfach1.Hoehe);
 
+  
+
         }
     }
 }
