@@ -45,6 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Couchtisch.cs" />
+    <Compile Include="FahrenderSessel.cs" />
+    <Compile Include="IFahrbarerUntersatz.cs" />
+    <Compile Include="IFahrendeSitzgelegenheiten.cs" />
     <Compile Include="ISitzgelegenheit.cs" />
     <Compile Include="Kommode.cs" />
     <Compile Include="Kuechenschrank.cs" />
@@ -54,6 +57,7 @@
     <Compile Include="Nachttisch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rollstuhl.cs" />
     <Compile Include="Schrank.cs" />
     <Compile Include="Schreibtisch.cs" />
     <Compile Include="Schubfach.cs" />
@@ -64,6 +68,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

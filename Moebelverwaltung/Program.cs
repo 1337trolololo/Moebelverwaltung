@@ -209,6 +209,18 @@ namespace BBW.Moebelverwaltung
             Stuhl stuhl = new Stuhl();
             Console.WriteLine(stuhl);
             Console.WriteLine(stuhl.Sitzen("sehr gut"));
+
+            // Aufruf des Standardkonstruktors von Rollstuhl
+            Rollstuhl rollstuhl = new Rollstuhl();
+            // Anwendung der geerbten ToString()-Methode
+            Console.WriteLine(rollstuhl);
+            // Aufruf der implementierten Methode Fahren() aus dem Interface
+            Console.WriteLine(rollstuhl.Fahren());
+
+            FahrenderSessel sessel = new FahrenderSessel();
+            Console.WriteLine(sessel.Fahren());
+            Console.WriteLine(sessel.Sitzen("sehr gut"));
+
   
 
         }
