@@ -202,10 +202,13 @@ namespace BBW.Moebelverwaltung
             //Console.WriteLine("alle Schubfächer haben folgende Maße:");
             //Console.WriteLine("Schubfach: {0} cm x {1} cm x {2} cm", kom2.Schubfach1.Laenge, kom2.Schubfach1.Breite, kom2.Schubfach1.Hoehe);
 
-            Schreibtisch st = new Schreibtisch();            
-            Console.WriteLine(st.ToString());
-            Console.WriteLine($"Preis {st.BerechnePreis():F2} EUR");
+            //Schreibtisch st = new Schreibtisch();            
+            //Console.WriteLine(st.ToString());
+            //Console.WriteLine($"Preis {st.BerechnePreis():F2} EUR");
 
+            Stuhl stuhl = new Stuhl();
+            Console.WriteLine(stuhl);
+            Console.WriteLine(stuhl.Sitzen("sehr gut"));
   
 
         }

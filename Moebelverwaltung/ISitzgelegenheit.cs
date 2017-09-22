@@ -23,6 +23,7 @@ namespace BBW.Moebelverwaltung
         /// <returns>string</returns>
         string Sitzen(string qualität);
 
+
         // Eigenschaft Polster ebenfalls public
 
         /// <summary>
