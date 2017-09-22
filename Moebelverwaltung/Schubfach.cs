@@ -137,10 +137,11 @@ namespace BBW.Moebelverwaltung
             Laenge = laenge;
             Breite = breite;
             Hoehe = hoehe;
+
             Gewicht = gewicht;
             Farbe = farbe;
         }
-
+        
 
         #endregion
 

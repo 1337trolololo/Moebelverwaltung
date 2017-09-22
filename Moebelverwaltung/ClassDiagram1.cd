@@ -10,7 +10,7 @@
   <Class Name="BBW.Moebelverwaltung.Kommode" Collapsed="true">
     <Position X="2.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIA0AAAAAAAQABAAAAAAAAA=</HashCode>
       <FileName>Kommode.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,7 +31,7 @@
   <Class Name="BBW.Moebelverwaltung.Moebelstueck" Collapsed="true">
     <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAEAAEAAAAAAAACAAAAEQABAEBAAAAAA=</HashCode>
+      <HashCode>AEAAAAAAQAAAAEAAAAAAAAAAACAAAAEQABAEBAAAAAA=</HashCode>
       <FileName>Moebelstueck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,14 +45,14 @@
   <Class Name="BBW.Moebelverwaltung.Schrank" Collapsed="true">
     <Position X="3.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQAAABAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAQAAABAAAAAAE=</HashCode>
       <FileName>Schrank.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BBW.Moebelverwaltung.Schreibtisch" Collapsed="true">
     <Position X="9.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Schreibtisch.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -70,14 +70,15 @@
   <Class Name="BBW.Moebelverwaltung.Stuhl" Collapsed="true">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Stuhl.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="BBW.Moebelverwaltung.Tisch" Collapsed="true">
     <Position X="9.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAgAAQIAAAEAAAAAQABAAAAAAAAA=</HashCode>
       <FileName>Tisch.cs</FileName>
     </TypeIdentifier>
   </Class>

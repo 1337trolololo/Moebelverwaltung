@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BBW.Moebelverwaltung
 {
-    public class Stuhl : Moebelstueck
+    // eine Klasse kann eine andere Klasse erweitern und beliebig viele INterfaces implementieren
+    // Syntax: class Klasse : Basisklasse, IInterface1, ...
+    public class Stuhl : Moebelstueck, ISitzgelegenheit
     {
         //wir kein eigener Konstruktor definiert, wird ein Konstruktor ohne Parameter bereitgestellt,
         // der automatisch den Konstruktoren ohne Parameter seiner Basisklasse aufruft
@@ -24,7 +26,25 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Stuhl(alle Parameter)");
         }
 
+        public bool Polster
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public override double BerechnePreis()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string Sitzen(string qualität)
         {
             throw new NotImplementedException();
         }

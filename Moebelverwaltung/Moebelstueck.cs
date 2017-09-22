@@ -55,7 +55,7 @@ namespace BBW.Moebelverwaltung
         /// <summary>
         /// Materialart des Möbelstückes: Holz,Stahl,Glas,Kunststoff
         /// </summary>
-        public Material Materialart { get; set; }
+        public Material Material { get; set; }
         #endregion
 
         protected Moebelstueck(int laenge, int breite, int hoehe, double gewicht, string farbe, Material materialart)
@@ -66,7 +66,7 @@ namespace BBW.Moebelverwaltung
             Hoehe = hoehe;
             Gewicht = gewicht;
             Farbe = farbe;
-            Materialart = materialart;
+            Material = materialart;
         }
 
         // voll implementierte Methode

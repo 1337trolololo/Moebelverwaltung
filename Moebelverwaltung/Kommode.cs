@@ -84,7 +84,7 @@ namespace BBW.Moebelverwaltung
         {
             double preis = 0.0;
 
-            switch (Materialart)
+            switch (Material)
             {
                 case Material.Holz:
                     preis = 100.0;

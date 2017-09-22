@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Couchtisch.cs" />
+    <Compile Include="ISitzgelegenheit.cs" />
     <Compile Include="Kommode.cs" />
     <Compile Include="Kuechenschrank.cs" />
     <Compile Include="Massagestuhl.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Schrank.cs" />
     <Compile Include="Schreibtisch.cs" />
     <Compile Include="Schubfach.cs" />
+    <Compile Include="Steckdosenleiste.cs" />
     <Compile Include="Stuhl.cs" />
     <Compile Include="Tisch.cs" />
   </ItemGroup>
