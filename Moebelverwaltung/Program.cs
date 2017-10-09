@@ -315,8 +315,19 @@ namespace BBW.Moebelverwaltung
 
             //neue Liste mit einer vorhandenen Liste initialisieren
             List<Tisch> tische2016 = new List<Tisch>(listeTische);
+
             List<Tisch> tische2017 = new List<Tisch>(listeTische);
             tische2017.Add(new Tisch(150, 90, 90, "rot"));
+            tische2017.Add(new Tisch(180, 90, 90, "blau"));
+            tische2017.Add(new Schreibtisch());
+            tische2017.Add(new Couchtisch());
+
+            //beide Listen in einem Dictionary speichern
+            //Dictionary speichert Schlüssel-Wert-Paare
+            //Dictionary<Key,Value>
+            Dictionary<string, List<Tisch>> aktuelleTische;
+            aktuelleTische = new Dictionary<string, List<Tisch>>();
+
 
 
 
