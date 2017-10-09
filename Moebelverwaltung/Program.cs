@@ -327,13 +327,37 @@ namespace BBW.Moebelverwaltung
             //Dictionary<Key,Value>
             Dictionary<string, List<Tisch>> aktuelleTische;
             aktuelleTische = new Dictionary<string, List<Tisch>>();
+            //Syntax: dict.Add(Schlüssel(string), Wert(List<Tisch>));
+            aktuelleTische.Add("2016", tische2016);
+            aktuelleTische.Add("2017", tische2017);
 
-
-
-
-
-
-
+            //paar ist vom Typ KeyValuePair<string,List<Tisch>>
+            foreach (var paar in aktuelleTische)
+            {
+                //Zugriff auf den Wert des Schlüssels des Dictionarys
+                string jahr = paar.Key;
+                Console.WriteLine("Tische des Jahres " + jahr + ":");
+                List<Tisch> meineTische = paar.Value;
+                foreach (var tisch in meineTische)
+                {
+                    Console.WriteLine(tisch.ToString());
+                }
+            }
+            ErstellenListe(3);
         }
+
+        public static List<Moebelstueck> ErstellenListe(int anzahl)
+        {
+            List<Moebelstueck> listeMoebel = new List<Moebelstueck>();
+
+            for (int i = 0; i < anzahl; i++)
+            {
+                listeMoebel.Add(new Schrank());
+            }
+
+
+            return listeMoebel;
+        }
+
     }
 }
