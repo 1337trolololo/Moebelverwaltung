@@ -108,6 +108,14 @@ namespace BBW.Moebelverwaltung
             return text;
         }
 
+        public void Reparieren(bool fehlerhaft)
+        {
+            if (fehlerhaft)
+                Console.WriteLine("Die Steckdosenleiste ist defekt und muss ausgetauscht werden");
+            else
+                Console.WriteLine("Es muss nichts repariert werden");
+            
+        }
 
 
     }

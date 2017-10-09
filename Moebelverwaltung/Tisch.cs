@@ -226,7 +226,8 @@ namespace BBW.Moebelverwaltung
             text += "Material: " + Material;
             text += $" Der Tisch hat {AnzTischbeine} Bein(e)";
 
-            return base.ToString();
+            //return base.ToString();
+            return text;
         }
     }
 }
