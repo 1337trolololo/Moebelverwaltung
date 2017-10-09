@@ -221,138 +221,175 @@ namespace BBW.Moebelverwaltung
             //Console.WriteLine(sessel.Fahren());
             //Console.WriteLine(sessel.Sitzen("sehr gut"));
 
-            Tisch tisch1 = new Tisch();
-            Tisch tisch2 = new Tisch(180, 70, 90, 5, 5.0, "dunkelbraun", Material.Holz);
-            Schreibtisch schreibtisch1 = new Schreibtisch();
-            Schreibtisch schreibtisch2 = new Schreibtisch(180, 70, 90, 5, 5.0, "dunkelbraun", Material.Holz, 3, new Schubfach(), new Steckdosenleiste());
+            //    Tisch tisch1 = new Tisch();
+            //    Tisch tisch2 = new Tisch(180, 70, 90, 5, 5.0, "dunkelbraun", Material.Holz);
+            //    Schreibtisch schreibtisch1 = new Schreibtisch();
+            //    Schreibtisch schreibtisch2 = new Schreibtisch(180, 70, 90, 5, 5.0, "dunkelbraun", Material.Holz, 3, new Schubfach(), new Steckdosenleiste());
 
-            //Speichern der Tische in einer Liste
-            // Liste vom Typ List<Tisch> kann Tisch-Objekte und von Tisch abgeleitete Objekte (z. B. Couchtisch-Objekte) speichern
+            //    //Speichern der Tische in einer Liste
+            //    // Liste vom Typ List<Tisch> kann Tisch-Objekte und von Tisch abgeleitete Objekte (z. B. Couchtisch-Objekte) speichern
 
-            // dem Konstruktor kann als Parameter auch eine Anfangskapazität übergeben werden
-            List<Tisch> listeTische = new List<Tisch>(5);
-            listeTische.Add(tisch1);
-            listeTische.Add(tisch2);
-            listeTische.Add(schreibtisch1);
-            listeTische.Add(schreibtisch2);
+            //    // dem Konstruktor kann als Parameter auch eine Anfangskapazität übergeben werden
+            //    List<Tisch> listeTische = new List<Tisch>(5);
+            //    listeTische.Add(tisch1);
+            //    listeTische.Add(tisch2);
+            //    listeTische.Add(schreibtisch1);
+            //    listeTische.Add(schreibtisch2);
 
-            Console.WriteLine("Anzahl Elemente: " + listeTische.Count);
-            Console.WriteLine("Kapazität: " + listeTische.Capacity);
+            //    Console.WriteLine("Anzahl Elemente: " + listeTische.Count);
+            //    Console.WriteLine("Kapazität: " + listeTische.Capacity);
 
-            //Hinzufügen eines neuen Tisches
-            listeTische.Add(new Tisch(100, 100, 80, "weiß"));
+            //    //Hinzufügen eines neuen Tisches
+            //    listeTische.Add(new Tisch(100, 100, 80, "weiß"));
 
-            Console.WriteLine("Anzahl Elemente neu: " + listeTische.Count);
-            Console.WriteLine("Kapazität neu: " + listeTische.Capacity);
+            //    Console.WriteLine("Anzahl Elemente neu: " + listeTische.Count);
+            //    Console.WriteLine("Kapazität neu: " + listeTische.Capacity);
 
-            //Hinzufügen eines Couchtisches
-            listeTische.Add(new Couchtisch());
+            //    //Hinzufügen eines Couchtisches
+            //    listeTische.Add(new Couchtisch());
 
-            Console.WriteLine("Anzahl Elemente neu: " + listeTische.Count);
-            Console.WriteLine("Kapazität neu: " + listeTische.Capacity);
+            //    Console.WriteLine("Anzahl Elemente neu: " + listeTische.Count);
+            //    Console.WriteLine("Kapazität neu: " + listeTische.Capacity);
 
-            //Durchlaufen der Liste vom Typ List<Tisch>
-            //Verwendung des automatischen Typrückschlusses
-            foreach (var tisch in listeTische)
-            {
-                //Nutzung der überschriebenen ToString() - Methode
-                Console.WriteLine("{0}", tisch);
+            //    //Durchlaufen der Liste vom Typ List<Tisch>
+            //    //Verwendung des automatischen Typrückschlusses
+            //    foreach (var tisch in listeTische)
+            //    {
+            //        //Nutzung der überschriebenen ToString() - Methode
+            //        Console.WriteLine("{0}", tisch);
 
-                //Anzeige, ob es sich um einen Tisch oder einen Schreibtisch handelt
-                if (tisch is Schreibtisch)
-                {
-                    Console.WriteLine("Art: ein Schreibisch");
-                    //mittels as Umwandlung des Tisch-Objektes in ein Schreibtisch-Objekt
-                    (tisch as Schreibtisch).Reparieren(true);
-                    
-                }
-                else if (tisch is Couchtisch)
-                {
-                    Console.WriteLine("Art: ein anderer Tisch");
-                }
-                else
-                {
-                    Console.WriteLine("eine normaler Tisch-Art");
-                }
-            }
+            //        //Anzeige, ob es sich um einen Tisch oder einen Schreibtisch handelt
+            //        if (tisch is Schreibtisch)
+            //        {
+            //            Console.WriteLine("Art: ein Schreibisch");
+            //            //mittels as Umwandlung des Tisch-Objektes in ein Schreibtisch-Objekt
+            //            (tisch as Schreibtisch).Reparieren(true);
 
-            //prüfen ob tisch1 ein Moebelstueck ist
-            //is prüft, ob tisch1 ein Moebelstueck ist oder davon abgeleitet ist oder ein bestimmtes Interface implementiert
-            if (tisch1 is Moebelstueck)
-                Console.WriteLine("Der Tisch ist ein Möbelstück");
-            else
-                Console.WriteLine("Der Tisch ist kein Möbelstück");
+            //        }
+            //        else if (tisch is Couchtisch)
+            //        {
+            //            Console.WriteLine("Art: ein anderer Tisch");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("eine normaler Tisch-Art");
+            //        }
+            //    }
 
-            Schubfach schubfach1 = new Schubfach();
-            if (schubfach1 is Moebelstueck)
-                Console.WriteLine("Ein Schubfach ist ein Möbelstück");
-            else
-                Console.WriteLine("Ein Schubfach ist kein Möbelstück");
+            //    //prüfen ob tisch1 ein Moebelstueck ist
+            //    //is prüft, ob tisch1 ein Moebelstueck ist oder davon abgeleitet ist oder ein bestimmtes Interface implementiert
+            //    if (tisch1 is Moebelstueck)
+            //        Console.WriteLine("Der Tisch ist ein Möbelstück");
+            //    else
+            //        Console.WriteLine("Der Tisch ist kein Möbelstück");
 
-            //Prüfen, ob ein bestimmtes Element in der Liste ist
-            if (listeTische.Contains(tisch2))
-            {
-                Console.WriteLine("Tisch2 ist in Liste.");
-                string eingabe;
-                Console.Write("Willst du den Tisch entfernen?: ");
-                eingabe = Console.ReadLine();
-                //eingabe.ToLower() wandelt eingegebene Bustaben in Kleinbuchstaben um
-                //prüfen, ob "ja" oder "j" eingeben wurde
-                if (eingabe.ToLower() == "ja" || eingabe.ToLower() == "j")
-                {
-                    //Tisch mittels Remove entfernen, erstes Vorkommen von tisch2 wird entfernt
-                    // RemoveAll() löscht alle Vorkommen des übergebenen Elements
-                    listeTische.Remove(tisch2);
+            //    Schubfach schubfach1 = new Schubfach();
+            //    if (schubfach1 is Moebelstueck)
+            //        Console.WriteLine("Ein Schubfach ist ein Möbelstück");
+            //    else
+            //        Console.WriteLine("Ein Schubfach ist kein Möbelstück");
 
-                }                
-            }
-            else
-            {
-                Console.WriteLine("Objekt ist nicht vorhanden");
-            }
+            //    //Prüfen, ob ein bestimmtes Element in der Liste ist
+            //    if (listeTische.Contains(tisch2))
+            //    {
+            //        Console.WriteLine("Tisch2 ist in Liste.");
+            //        string eingabe;
+            //        Console.Write("Willst du den Tisch entfernen?: ");
+            //        eingabe = Console.ReadLine();
+            //        //eingabe.ToLower() wandelt eingegebene Bustaben in Kleinbuchstaben um
+            //        //prüfen, ob "ja" oder "j" eingeben wurde
+            //        if (eingabe.ToLower() == "ja" || eingabe.ToLower() == "j")
+            //        {
+            //            //Tisch mittels Remove entfernen, erstes Vorkommen von tisch2 wird entfernt
+            //            // RemoveAll() löscht alle Vorkommen des übergebenen Elements
+            //            listeTische.Remove(tisch2);
 
-            Console.WriteLine("Anzahl Elemente: " + listeTische.Count);
+            //        }                
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Objekt ist nicht vorhanden");
+            //    }
 
-            //neue Liste mit einer vorhandenen Liste initialisieren
-            List<Tisch> tische2016 = new List<Tisch>(listeTische);
+            //    Console.WriteLine("Anzahl Elemente: " + listeTische.Count);
 
-            List<Tisch> tische2017 = new List<Tisch>(listeTische);
-            tische2017.Add(new Tisch(150, 90, 90, "rot"));
-            tische2017.Add(new Tisch(180, 90, 90, "blau"));
-            tische2017.Add(new Schreibtisch());
-            tische2017.Add(new Couchtisch());
+            //    //neue Liste mit einer vorhandenen Liste initialisieren
+            //    List<Tisch> tische2016 = new List<Tisch>(listeTische);
 
-            //beide Listen in einem Dictionary speichern
-            //Dictionary speichert Schlüssel-Wert-Paare
-            //Dictionary<Key,Value>
-            Dictionary<string, List<Tisch>> aktuelleTische;
-            aktuelleTische = new Dictionary<string, List<Tisch>>();
-            //Syntax: dict.Add(Schlüssel(string), Wert(List<Tisch>));
-            aktuelleTische.Add("2016", tische2016);
-            aktuelleTische.Add("2017", tische2017);
+            //    List<Tisch> tische2017 = new List<Tisch>(listeTische);
+            //    tische2017.Add(new Tisch(150, 90, 90, "rot"));
+            //    tische2017.Add(new Tisch(180, 90, 90, "blau"));
+            //    tische2017.Add(new Schreibtisch());
+            //    tische2017.Add(new Couchtisch());
 
-            //paar ist vom Typ KeyValuePair<string,List<Tisch>>
-            foreach (var paar in aktuelleTische)
-            {
-                //Zugriff auf den Wert des Schlüssels des Dictionarys
-                string jahr = paar.Key;
-                Console.WriteLine("Tische des Jahres " + jahr + ":");
-                List<Tisch> meineTische = paar.Value;
-                foreach (var tisch in meineTische)
-                {
-                    Console.WriteLine(tisch.ToString());
-                }
-            }
-            ErstellenListe(3);
+            //    //beide Listen in einem Dictionary speichern
+            //    //Dictionary speichert Schlüssel-Wert-Paare
+            //    //Dictionary<Key,Value>
+            //    Dictionary<string, List<Tisch>> aktuelleTische;
+            //    aktuelleTische = new Dictionary<string, List<Tisch>>();
+            //    //Syntax: dict.Add(Schlüssel(string), Wert(List<Tisch>));
+            //    aktuelleTische.Add("2016", tische2016);
+            //    aktuelleTische.Add("2017", tische2017);
+
+            //    //paar ist vom Typ KeyValuePair<string,List<Tisch>>
+            //    foreach (var paar in aktuelleTische)
+            //    {
+            //        //Zugriff auf den Wert des Schlüssels des Dictionarys
+            //        string jahr = paar.Key;
+            //        Console.WriteLine("Tische des Jahres " + jahr + ":");
+            //        List<Tisch> meineTische = paar.Value;
+            //        foreach (var tisch in meineTische)
+            //        {
+            //            Console.WriteLine(tisch.ToString());
+            //        }
+            //    }
+            ErstellenListe(7);
         }
 
         public static List<Moebelstueck> ErstellenListe(int anzahl)
         {
             List<Moebelstueck> listeMoebel = new List<Moebelstueck>();
+            List<Moebelstueck> listeSchraenke = new List<Moebelstueck>();
+            List<Moebelstueck> listeTische = new List<Moebelstueck>();
 
             for (int i = 0; i < anzahl; i++)
             {
                 listeMoebel.Add(new Schrank());
+                listeMoebel.Add(new Tisch());
+            }
+
+            foreach (var moebelstueck in listeMoebel)
+            {
+                if (moebelstueck is Schrank)
+                {
+                    Console.WriteLine("Schrank in listeMoebel gefunden, wird in listeSchraenke gespeichert...");
+                    listeSchraenke.Add(moebelstueck);
+                }
+                else if (moebelstueck is Tisch)
+                {
+                    Console.WriteLine("Tisch in listeMoebel gefunden, wird in listeTische gespeichert...");
+                    listeTische.Add(moebelstueck);
+
+                }
+                else
+                {
+                    Console.WriteLine("Diese Position ist weder Tisch noch Schrank...");
+                }
+
+            }
+
+            //listeSchraenke ausgeben
+            Console.WriteLine("listeSchraenke:");
+            foreach (var schrank in listeSchraenke)
+            {
+                Console.WriteLine(schrank);
+            }
+
+            //listeTische ausgeben
+            Console.WriteLine("listeTische:");
+            foreach (var tisch in listeTische)
+            {
+                Console.WriteLine(tisch);
             }
 
 

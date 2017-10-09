@@ -222,8 +222,8 @@ namespace BBW.Moebelverwaltung
         {
 
             string text = string.Format("Maße: {0} cm x {1} cm x {2} cm", Laenge, Breite, Hoehe);
-            text += "Farbe: " + Farbe;
-            text += "Material: " + Material;
+            text += " Farbe: " + Farbe;
+            text += " Material: " + Material;
             text += $" Der Tisch hat {AnzTischbeine} Bein(e)";
 
             //return base.ToString();
