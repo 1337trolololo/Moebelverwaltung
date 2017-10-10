@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Couchtisch.cs" />
     <Compile Include="FahrenderSessel.cs" />
+    <Compile Include="Hilfsmethoden.cs" />
     <Compile Include="IFahrbarerUntersatz.cs" />
     <Compile Include="IFahrendeSitzgelegenheiten.cs" />
     <Compile Include="ISitzgelegenheit.cs" />

@@ -343,58 +343,63 @@ namespace BBW.Moebelverwaltung
             //            Console.WriteLine(tisch.ToString());
             //        }
             //    }
-            ErstellenListe(7);
+            //ErstellenListe(7);
+
+            //Aufruf der statischen Methode ErstellenListe()
+            //Syntax: Klassen.Methodenname(ParameterListe)
+            Hilfsmethoden.ErstellenListe(5);
+
         }
 
-        public static List<Moebelstueck> ErstellenListe(int anzahl)
-        {
-            List<Moebelstueck> listeMoebel = new List<Moebelstueck>();
-            List<Moebelstueck> listeSchraenke = new List<Moebelstueck>();
-            List<Moebelstueck> listeTische = new List<Moebelstueck>();
+        //public static void ErstellenListe(int anzahl)
+        //{
+        //    List<Moebelstueck> listeMoebel = new List<Moebelstueck>();
+        //    List<Moebelstueck> listeSchraenke = new List<Moebelstueck>();
+        //    List<Moebelstueck> listeTische = new List<Moebelstueck>();
 
-            for (int i = 0; i < anzahl; i++)
-            {
-                listeMoebel.Add(new Schrank());
-                listeMoebel.Add(new Tisch());
-            }
+        //    for (int i = 0; i < anzahl; i++)
+        //    {
+        //        listeMoebel.Add(new Schrank());
+        //        listeMoebel.Add(new Tisch());
+        //    }
 
-            foreach (var moebelstueck in listeMoebel)
-            {
-                if (moebelstueck is Schrank)
-                {
-                    Console.WriteLine("Schrank in listeMoebel gefunden, wird in listeSchraenke gespeichert...");
-                    listeSchraenke.Add(moebelstueck);
-                }
-                else if (moebelstueck is Tisch)
-                {
-                    Console.WriteLine("Tisch in listeMoebel gefunden, wird in listeTische gespeichert...");
-                    listeTische.Add(moebelstueck);
+        //    foreach (var moebelstueck in listeMoebel)
+        //    {
+        //        if (moebelstueck is Schrank)
+        //        {
+        //            Console.WriteLine("Schrank in listeMoebel gefunden, wird in listeSchraenke gespeichert...");
+        //            listeSchraenke.Add(moebelstueck);
+        //        }
+        //        else if (moebelstueck is Tisch)
+        //        {
+        //            Console.WriteLine("Tisch in listeMoebel gefunden, wird in listeTische gespeichert...");
+        //            listeTische.Add(moebelstueck);
 
-                }
-                else
-                {
-                    Console.WriteLine("Diese Position ist weder Tisch noch Schrank...");
-                }
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Diese Position ist weder Tisch noch Schrank...");
+        //        }
 
-            }
+        //    }
 
-            //listeSchraenke ausgeben
-            Console.WriteLine("listeSchraenke:");
-            foreach (var schrank in listeSchraenke)
-            {
-                Console.WriteLine(schrank);
-            }
+        //    //listeSchraenke ausgeben
+        //    Console.WriteLine("listeSchraenke:");
+        //    foreach (var schrank in listeSchraenke)
+        //    {
+        //        Console.WriteLine(schrank);
+        //    }
 
-            //listeTische ausgeben
-            Console.WriteLine("listeTische:");
-            foreach (var tisch in listeTische)
-            {
-                Console.WriteLine(tisch);
-            }
+        //    //listeTische ausgeben
+        //    Console.WriteLine("listeTische:");
+        //    foreach (var tisch in listeTische)
+        //    {
+        //        Console.WriteLine(tisch);
+        //    }
 
 
-            return listeMoebel;
-        }
+            
+        //}
 
     }
 }
