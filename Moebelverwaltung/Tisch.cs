@@ -229,5 +229,22 @@ namespace BBW.Moebelverwaltung
             //return base.ToString();
             return text;
         }
+
+        /// <summary>
+        /// kopiert ein Tisch-Objekt
+        /// </summary>
+        /// <returns>Tisch</returns>
+        public Tisch Clone()
+        {
+            //MemberwiseClone() von Object erstellt eine flache Kopie und gibt ein Objekt vom Typ object zurück
+            //  -> muss in Kindklassen-Objekt umgewandelt werden
+            //flacheKopie: Werttypen werden direkt kopiert, bei den Referenztypen werden nur die Referenzvariablen kopiert, nicht die Objekte, auf die diese verweisen
+            Tisch t1 = (Tisch) MemberwiseClone();
+
+            //Eigenschaften für Referenztypen festlegen
+            t1.Farbe = Farbe;
+            t1.Material = Material;
+            return t1;
+        }
     }
 }

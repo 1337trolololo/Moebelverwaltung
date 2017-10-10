@@ -349,6 +349,31 @@ namespace BBW.Moebelverwaltung
             //Syntax: Klassen.Methodenname(ParameterListe)
             Hilfsmethoden.ErstellenListe(20);
 
+            Tisch meinTisch1 = new Tisch(150, 80, 90, "weiß");
+            Tisch meinTisch2 = new Tisch(160, 80, 90, "braun");
+
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+
+            //nach Zuweisung zeigen beide Referenzvariablen auf dasselbe Objekt
+            //altes Objekt, auf das meinTisch1 verwiesen hat, ist nun nicht mehr referenzierbar
+            //  -> Objekt kann von GarbageCollector eingesammelt werden
+            meinTisch1 = meinTisch2;
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+
+            //Änderung der Länge des Tisches, auf den beide Referenzvariablen zeigen
+            meinTisch1.Laenge = 200;
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+
+            //Zuweisen der Kopie von meinTisch2 an meinTisch3
+            Tisch meinTisch3 = meinTisch2.Clone();
+            Console.Write("meinTisch3:");
+            Console.WriteLine(meinTisch3.ToString());
+            Console.Write("meinTisch2:");
+            Console.WriteLine(meinTisch2.ToString());
+
         }
 
         //public static void ErstellenListe(int anzahl)

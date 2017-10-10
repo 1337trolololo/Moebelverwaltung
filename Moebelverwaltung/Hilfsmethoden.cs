@@ -61,14 +61,24 @@ namespace BBW.Moebelverwaltung
                         //item vom Typ Moebelstueck in ein Kind-Klassen-Objekt (Objekt der abgeleiteten Klasse ) umwandeln
                         //Typecasting (Umwandlung) erfolgt mittels as - Operator
                         Schrank schrank = item as Schrank;
-                        //Umwandlung erforderlic
+                        //Umwandlung erforderlich, da statt Moebelstueck ein Objekt vom Typ Schrank erwartet wird
                         schraenke.Add(schrank);
                     }
                     else if (item is Tisch)
                     {
-                        Tisch tisch = item as Tisch;
-                        tisch.Add(tisch);
+                        //Tisch tisch = item as Tisch;
+                        tische.Add(item as Tisch);
                     }
+                }
+
+                //Durchlaufen der beiden neuen Listen
+                foreach (var item in schraenke)
+                {
+                    Console.WriteLine("Schrank: {0} cm x {1} cm x {2} cm", item.Laenge, item.Breite, item.Hoehe);
+                }
+                foreach (var item in tische)
+                {
+                    Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", item.Laenge, item.Breite, item.Hoehe, item.Farbe);
                 }
             }
             else
