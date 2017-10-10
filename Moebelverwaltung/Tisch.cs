@@ -246,5 +246,24 @@ namespace BBW.Moebelverwaltung
             //t1.Material = Material;
             return t1;
         }
+
+        //Überschreiben der MEthode Equals(), um Tischobjekte zu vergleichen
+        public override bool Equals(object obj)
+        {
+            //gibt false zurück, falls übergebenes Objekt null ist oder die Datentypen der Objekte unterschiedlich sind
+            //GetType().ToString() gibt Klassennamen inkl. Namespace als String zurück
+            if (obj == null || GetType().ToString() != obj.GetType().ToString())
+            {
+                return false;
+            }
+            else
+            {
+                //eigentlicher Vergleich
+                Tisch t = (Tisch) obj;
+                //Farbe und AnzTischbeine, Gewicht nicht in VErgleich drin, da diese für unsere Zwecke nicht gebraucht werden
+                return Laenge == t.Laenge && Breite == t.Breite && Hoehe == t.Hoehe && Material == t.Material;
+            }
+        }
+
     }
 }

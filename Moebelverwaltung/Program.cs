@@ -346,41 +346,120 @@ namespace BBW.Moebelverwaltung
             //ErstellenListe(7);
 
             //Aufruf der statischen Methode ErstellenListe()
-            //Syntax: Klassen.Methodenname(ParameterListe)
-            Hilfsmethoden.ErstellenListe(20);
+            ////Syntax: Klassen.Methodenname(ParameterListe)
+            //Hilfsmethoden.ErstellenListe(20);
 
-            Tisch meinTisch1 = new Tisch(150, 80, 90, "weiß");
-            Tisch meinTisch2 = new Tisch(160, 80, 90, "braun");
+            //Tisch meinTisch1 = new Tisch(150, 80, 90, "weiß");
+            //Tisch meinTisch2 = new Tisch(160, 80, 90, "braun");
 
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
 
-            //nach Zuweisung zeigen beide Referenzvariablen auf dasselbe Objekt
-            //altes Objekt, auf das meinTisch1 verwiesen hat, ist nun nicht mehr referenzierbar
-            //  -> Objekt kann von GarbageCollector eingesammelt werden
-            meinTisch1 = meinTisch2;
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+            ////nach Zuweisung zeigen beide Referenzvariablen auf dasselbe Objekt
+            ////altes Objekt, auf das meinTisch1 verwiesen hat, ist nun nicht mehr referenzierbar
+            ////  -> Objekt kann von GarbageCollector eingesammelt werden
+            //meinTisch1 = meinTisch2;
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
 
             //Änderung der Länge des Tisches, auf den beide Referenzvariablen zeigen
-            meinTisch1.Laenge = 200;
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
-            Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
+            //meinTisch1.Laenge = 200;
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch1.Laenge, meinTisch1.Breite, meinTisch1.Hoehe, meinTisch1.Farbe);
+            //Console.WriteLine("Tisch: {0} cm x {1} cm x {2} cm, Farbe: {3}", meinTisch2.Laenge, meinTisch2.Breite, meinTisch2.Hoehe, meinTisch2.Farbe);
 
-            //Zuweisen der Kopie von meinTisch2 an meinTisch3
-            Tisch meinTisch3 = meinTisch2.Clone();
-            Console.Write("meinTisch3: ");
-            Console.WriteLine(meinTisch3.ToString());
-            Console.Write("meinTisch2: ");
-            Console.WriteLine(meinTisch2.ToString());
+            ////Zuweisen der Kopie von meinTisch2 an meinTisch3
+            //Tisch meinTisch3 = meinTisch2.Clone();
+            //Console.Write("meinTisch3: ");
+            //Console.WriteLine(meinTisch3.ToString());
+            //Console.Write("meinTisch2: ");
+            //Console.WriteLine(meinTisch2.ToString());
 
-            //Änderung des neuen Tisches (meinTisch3)
-            meinTisch3.Farbe = "rot";
-            Console.Write("meinTisch3: ");
-            Console.WriteLine(meinTisch3.ToString());
-            //Farbe von meinTisch2 bleibt unverändert
-            Console.Write("meinTisch2: ");
-            Console.WriteLine(meinTisch2.ToString());
+            ////Änderung des neuen Tisches (meinTisch3)
+            //meinTisch3.Farbe = "rot";
+            //Console.Write("meinTisch3: ");
+            //Console.WriteLine(meinTisch3.ToString());
+            ////Farbe von meinTisch2 bleibt unverändert
+            //Console.Write("meinTisch2: ");
+            //Console.WriteLine(meinTisch2.ToString());
+
+            //Schrank meinSchrank1 = new Schrank(100, 40, 150);
+            //Schrank meinSchrank2 = meinSchrank1.Clone();
+
+            //Console.Write("Schrank1: ");
+            //Console.WriteLine(" Länge: {0} cm, Breite: {1} cm", meinSchrank1.Laenge, meinSchrank1.Breite);
+            //Console.Write("Schrank2: ");
+            //Console.WriteLine(" Länge: {0} cm, Breite: {1} cm", meinSchrank2.Laenge, meinSchrank2.Breite);
+
+            ////Erzeugen von 4 Schubfach - Objekten
+            //Schubfach schub1 = new Schubfach(100, 30, 15, farbe: "beige");
+            //Schubfach schub2 = new Schubfach(100, 30, 15, farbe: "rot");
+            //Schubfach schub3 = new Schubfach(100, 30, 15, farbe: "braun");
+            //Schubfach schub4 = new Schubfach(100, 30, 15, farbe: "weiß");
+
+            ////Kommoden-Objekt erzeugen, das kopiert werden soll
+            //Kommode komm = new Kommode(100, 40, 100, 3.0, "helbraun", Material.Holz, 4, schub1, schub2, schub3, schub4);
+
+            //Kommode komm2 = komm.Clone();
+            //Console.WriteLine("Farbe Schubfach1 von komm: " + komm.Schubfach1.Farbe);
+            //Console.WriteLine("Farbe Schubfach1 von komm2: " + komm2.Schubfach1.Farbe);
+
+            ////Schubfach1 der 2. Kommode ändern
+            //komm2.Schubfach1.Farbe = "grün";
+            //Console.WriteLine("Farbe Schubfach1 von komm: " + komm.Schubfach1.Farbe);
+            //Console.WriteLine("Farbe Schubfach1 von komm2: " + komm2.Schubfach1.Farbe);
+
+            ////Vergleich von Tisch-Objekten mittels Equals()
+            //Tisch esstisch1 = new Tisch(120, 90, 90, "blau");
+            //Tisch esstisch2 = new Tisch(120, 90, 90, "rot");
+
+            ////eigene Equals()_Methode zum Vergleichen genutzt (keine Beachtung von Gewicht, AnzTischbeine, FArbe)            
+            //if (esstisch1.Equals(esstisch2))
+            //{
+            //    Console.WriteLine("Tische sind gleich bei Laenge, Breite, Hoehe, Material");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tische sind ungleich");
+            //}
+
+            //esstisch1.Material = Material.Glas;
+
+            ////eigene Equals()_Methode zum Vergleichen genutzt (keine Beachtung von Gewicht, AnzTischbeine, FArbe)            
+            //if (esstisch1.Equals(esstisch2))
+            //{
+            //    Console.WriteLine("Tische sind gleich bei Laenge, Breite, Hoehe, Material");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tische sind ungleich");
+            //}
+
+            //Schreibtisch pctisch1 = new Schreibtisch();
+            //Schreibtisch pctisch2 = new Schreibtisch();
+
+            //if (pctisch1.Equals(pctisch2))
+            //{
+            //    Console.WriteLine("Die Schreibtische sind gleich");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Die Schreibtische sind nicht gleich");
+            //}
+            ////Steckdosenleiste bei pctisch1 entfernen
+            ////pctisch1.Steckdosenleiste = false;
+
+            //if (pctisch1.Equals(pctisch2))
+            //{
+            //    Console.WriteLine("Die Schreibtische sind gleich");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Die Schreibtische sind nicht gleich");
+            //}
+
+
+
+
         }
 
         //public static void ErstellenListe(int anzahl)

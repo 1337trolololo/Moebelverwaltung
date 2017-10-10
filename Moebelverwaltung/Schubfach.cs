@@ -170,5 +170,22 @@ namespace BBW.Moebelverwaltung
             return sf1;
         }
 
+        public override bool Equals(object obj)
+        {
+            //gibt false zurück, falls übergebenes Objekt null ist oder die Datentypen der Objekte unterschiedlich sind
+            //GetType().ToString() gibt Klassennamen inkl. Namespace als String zurück
+            if (obj == null || GetType().ToString() != obj.GetType().ToString())
+            {
+                return false;
+            }
+            else
+            {
+                //eigentlicher Vergleich
+                Schubfach sf = (Schubfach)obj;
+                //Farbe und AnzTischbeine, Gewicht nicht in VErgleich drin, da diese für unsere Zwecke nicht gebraucht werden
+                return Laenge == sf.Laenge && Breite == sf.Breite && Hoehe == sf.Hoehe && Gewicht == sf.Gewicht && Farbe == sf.Farbe;
+            }
+        }
+
     }
 }

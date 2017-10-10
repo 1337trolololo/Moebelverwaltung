@@ -141,5 +141,21 @@ namespace BBW.Moebelverwaltung
             return s1;
         }
 
+        public override bool Equals(object obj)
+        {
+            //gibt false zurück, falls übergebenes Objekt null ist oder die Datentypen der Objekte unterschiedlich sind
+            //GetType().ToString() gibt Klassennamen inkl. Namespace als String zurück
+            if (obj == null || GetType().ToString() != obj.GetType().ToString())
+            {
+                return false;
+            }
+            else
+            {
+                //eigentlicher Vergleich
+                Schrank s = (Schrank)obj;                
+                return Laenge == s.Laenge && Breite == s.Breite && Hoehe == s.Hoehe && Material == s.Material;
+            }
+        }
+
     }
 }

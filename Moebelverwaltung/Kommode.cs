@@ -162,14 +162,13 @@ namespace BBW.Moebelverwaltung
 
         public Kommode Clone()
         {
-            //MemberwiseClone() von Object erstellt eine flache Kopie und gibt ein Objekt vom Typ object zurück
-            //  -> muss in Kindklassen-Objekt umgewandelt werden
-            //flacheKopie: Werttypen werden direkt kopiert, bei den Referenztypen werden nur die Referenzvariablen kopiert, nicht die Objekte, auf die diese verweisen
-            Kommode k1 = (Kommode)MemberwiseClone();
+           //Aufruf der Methode Clone() der Basisklasse
+            Kommode k1 = (Kommode)base.Clone();
 
-            //Eigenschaften für Referenztypen festlegen
-            //k1.Farbe = Farbe;
-            k1.Material = Material;
+            k1.Schubfach1 = Schubfach1.Clone();
+            k1.Schubfach2 = Schubfach2.Clone();
+            k1.Schubfach3 = Schubfach3.Clone();
+            k1.Schubfach4 = Schubfach4.Clone();
             return k1;
         }
 

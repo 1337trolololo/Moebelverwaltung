@@ -117,6 +117,23 @@ namespace BBW.Moebelverwaltung
             
         }
 
+        public new Schreibtisch Clone()
+        {
+            Schreibtisch st = (Schreibtisch)base.Clone();
+            st.Schubfach = Schubfach.Clone();
+
+            return st;
+        }
+
+        public override bool Equals(object obj)
+        {
+            //um Schubfach in Vergleich mit aufzunehmen, muss Equals() in Schubfach überschrieben werden
+            Schreibtisch st = (Schreibtisch)obj;
+
+            return base.Equals(st) && Steckdosenleiste == st.Steckdosenleiste;
+            // && Schubfach.Equals(st.Schubfach);
+
+        }
 
     }
 }
