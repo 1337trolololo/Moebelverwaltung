@@ -242,8 +242,8 @@ namespace BBW.Moebelverwaltung
             Tisch t1 = (Tisch) MemberwiseClone();
 
             //Eigenschaften für Referenztypen festlegen
-            t1.Farbe = Farbe;
-            t1.Material = Material;
+            //t1.Farbe = Farbe;
+            //t1.Material = Material;
             return t1;
         }
     }

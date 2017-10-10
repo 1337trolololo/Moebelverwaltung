@@ -369,11 +369,18 @@ namespace BBW.Moebelverwaltung
 
             //Zuweisen der Kopie von meinTisch2 an meinTisch3
             Tisch meinTisch3 = meinTisch2.Clone();
-            Console.Write("meinTisch3:");
+            Console.Write("meinTisch3: ");
             Console.WriteLine(meinTisch3.ToString());
-            Console.Write("meinTisch2:");
+            Console.Write("meinTisch2: ");
             Console.WriteLine(meinTisch2.ToString());
 
+            //Änderung des neuen Tisches (meinTisch3)
+            meinTisch3.Farbe = "rot";
+            Console.Write("meinTisch3: ");
+            Console.WriteLine(meinTisch3.ToString());
+            //Farbe von meinTisch2 bleibt unverändert
+            Console.Write("meinTisch2: ");
+            Console.WriteLine(meinTisch2.ToString());
         }
 
         //public static void ErstellenListe(int anzahl)

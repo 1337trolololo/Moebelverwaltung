@@ -159,5 +159,19 @@ namespace BBW.Moebelverwaltung
             text = "Die Kommode wurde von " + firma + " in " + ort + " hergestellt.";
             return text;
         }
+
+        public Kommode Clone()
+        {
+            //MemberwiseClone() von Object erstellt eine flache Kopie und gibt ein Objekt vom Typ object zurück
+            //  -> muss in Kindklassen-Objekt umgewandelt werden
+            //flacheKopie: Werttypen werden direkt kopiert, bei den Referenztypen werden nur die Referenzvariablen kopiert, nicht die Objekte, auf die diese verweisen
+            Kommode k1 = (Kommode)MemberwiseClone();
+
+            //Eigenschaften für Referenztypen festlegen
+            //k1.Farbe = Farbe;
+            k1.Material = Material;
+            return k1;
+        }
+
     }
 }

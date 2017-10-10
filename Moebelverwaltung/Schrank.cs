@@ -123,5 +123,23 @@ namespace BBW.Moebelverwaltung
             }
             
         }
+
+        /// <summary>
+        /// kopiert ein Schrank-Objekt
+        /// </summary>
+        /// <returns>Schrank</returns>
+        public Schrank Clone()
+        {
+            //MemberwiseClone() von Object erstellt eine flache Kopie und gibt ein Objekt vom Typ object zurück
+            //  -> muss in Kindklassen-Objekt umgewandelt werden
+            //flacheKopie: Werttypen werden direkt kopiert, bei den Referenztypen werden nur die Referenzvariablen kopiert, nicht die Objekte, auf die diese verweisen
+            Schrank s1 = (Schrank)MemberwiseClone();
+
+            //Eigenschaften für Referenztypen festlegen
+            //s1.Farbe = Farbe;
+            s1.Material = Material;
+            return s1;
+        }
+
     }
 }

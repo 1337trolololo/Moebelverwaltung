@@ -68,14 +68,14 @@
   <Class Name="BBW.Moebelverwaltung.Schrank" Collapsed="true">
     <Position X="9" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAQAAABAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAIAAAAAAAAAQAAABAAAAABE=</HashCode>
       <FileName>Schrank.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BBW.Moebelverwaltung.Schreibtisch" Collapsed="true">
     <Position X="17" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAEQAAAAAAAACAAAAAQAAAAAAAAAAA=</HashCode>
       <FileName>Schreibtisch.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -104,8 +104,15 @@
   <Class Name="BBW.Moebelverwaltung.Tisch" Collapsed="true">
     <Position X="14.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAgAAQIAAAEAAAAAQABAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAgAAQIAAAEAAAAAQABAAAAAAABA=</HashCode>
       <FileName>Tisch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BBW.Moebelverwaltung.Hilfsmethoden" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Hilfsmethoden.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="BBW.Moebelverwaltung.IFahrbarerUntersatz" Collapsed="true">
