@@ -30,7 +30,7 @@ namespace BBW.Moebelverwaltung
                 for (int i = 0; i < anzahl; i++)
                 {
                     moebelstuecke.Add(new Schrank(100+i, 40+i, 100+i));
-                    moebelstuecke.Add(new Tisch(100 + i, 40 + i, 100 + i, "braun"));
+                    moebelstuecke.Add(new Tisch(100 + i, 40 + i, 90, "braun"));
                 }
                 //for (int i = 0; i < anzahl; i++)
                 //{
@@ -45,12 +45,30 @@ namespace BBW.Moebelverwaltung
                     }
                     else if (item is Tisch)
                     {
-                        Console.Write("Tisch");
+                        Console.Write("Tisch: ");
                     }
                     else {
                         Console.Write("unbekannt: ");
                     }
                     Console.WriteLine("{0} cm x {1} cm x {2} cm", item.Laenge, item.Breite, item.Hoehe);
+                }
+
+                foreach (var item in moebelstuecke)
+                {
+                    //is überprüft, ob Objekt vom Typ dieser Klasse oder davon abgeleitet ist
+                    if (item is Schrank)
+                    {
+                        //item vom Typ Moebelstueck in ein Kind-Klassen-Objekt (Objekt der abgeleiteten Klasse ) umwandeln
+                        //Typecasting (Umwandlung) erfolgt mittels as - Operator
+                        Schrank schrank = item as Schrank;
+                        //Umwandlung erforderlic
+                        schraenke.Add(schrank);
+                    }
+                    else if (item is Tisch)
+                    {
+                        Tisch tisch = item as Tisch;
+                        tisch.Add(tisch);
+                    }
                 }
             }
             else

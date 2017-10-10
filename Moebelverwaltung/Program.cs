@@ -347,7 +347,7 @@ namespace BBW.Moebelverwaltung
 
             //Aufruf der statischen Methode ErstellenListe()
             //Syntax: Klassen.Methodenname(ParameterListe)
-            Hilfsmethoden.ErstellenListe(5);
+            Hilfsmethoden.ErstellenListe(20);
 
         }
 
