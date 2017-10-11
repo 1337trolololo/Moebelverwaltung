@@ -86,5 +86,30 @@ namespace BBW.Moebelverwaltung
                 Console.WriteLine("ungültige Anzahl");
             }
         }
+
+        public static void Vergleichen(Schrank s)
+        {
+            List<Schrank> liste = new List<Schrank>();
+
+            liste.Add(new Schrank(180, 80, 200));
+            liste.Add(new Schrank(300, 80, 200));
+            liste.Add(new Schrank(150, 80, 180));
+            liste.Add(new Schrank());
+            liste.Add(new Schrank());
+            liste.Add(new Schrank());
+
+            int anzahl = 0;
+
+            foreach (var item in liste)
+            {
+                if (item == s)
+                {
+                    anzahl++;
+                }               
+            }
+            Console.WriteLine("Anzahl: " + anzahl);
+        }
+
+
     }
 }
