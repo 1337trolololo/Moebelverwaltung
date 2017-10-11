@@ -110,6 +110,27 @@ namespace BBW.Moebelverwaltung
             Console.WriteLine("Anzahl: " + anzahl);
         }
 
+        //überladene Version von Vergleichen()
+        /// <summary>
+        /// vergleicht, wie oft der Schrank in der Liste enthalten ist
+        /// </summary>
+        /// <param name="s">Schrank, nach dem gesucht werden soll</param>
+        /// <param name="liste">Liste mit Schrank-Objekten</param>
+        /// <returns>Anzahl der gefundenen Übereinstimmungen</returns>
+        public static int Vergleichen(Schrank s, List<Schrank> liste)
+        {
+            int anzahl = 0;
+
+            foreach (var item in liste)
+            {
+                if (item == s)
+                {
+                    anzahl++;
+                }
+            }
+           return anzahl;
+        }
+
 
     }
 }
