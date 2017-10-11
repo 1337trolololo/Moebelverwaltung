@@ -265,5 +265,61 @@ namespace BBW.Moebelverwaltung
             }
         }
 
+        #region Operatoren
+        //Operator "==" zum Vergleichen von Tisch-Objekten überladen
+        //wenn "==" überladen wird, sollte auch "!=" überladen werden
+        /// <summary>
+        /// vergleicht zwei Tisch-Objekte miteinander
+        /// </summary>
+        /// <param name="t1">Tisch1</param>
+        /// <param name="t2">Tisch2</param>
+        /// <returns>gibt true bei Gleichheit zurück</returns>
+        public static bool operator == (Tisch t1, Tisch t2)
+        {
+
+            //prüft, ob alle Eigenschaften übereinstimmen
+            return t1.Laenge == t2.Laenge && t1.Breite == t2.Breite && t1.Hoehe == t2.Hoehe && t1.Material == t2.Material && t1.Gewicht == t2.Gewicht && t1.Farbe == t2.Farbe && t1.AnzTischbeine == t2.AnzTischbeine;
+
+        }
+        /// <summary>
+        /// vergleicht zwei Tisch-Objekte miteinander
+        /// </summary>
+        /// <param name="t1">Tisch1</param>
+        /// <param name="t2">Tisch2</param>
+        /// <returns>gibt true bei Ungleichheit zurück</returns>
+        public static bool operator != (Tisch t1, Tisch t2)
+        {
+            //Verwendung des überladenen Operators ==
+            return !(t1 == t2);
+        }
+
+        /// <summary>
+        /// addiert Tische (Tische werden nebeneinander gestellt)
+        /// </summary>
+        /// <param name="t1">Tisch1</param>
+        /// <param name="t2">Tisch2</param>
+        /// <returns>zusammengestellter Tisch aus Tisch1 und Tisch2</returns>
+        public static Tisch operator + (Tisch t1, Tisch t2)
+        {
+            int neueLaenge = t1.Laenge + t2.Laenge;
+            double neuesGewicht = t1.Gewicht + t2.Gewicht;
+            return new Tisch(neueLaenge, t1.Breite, t1.Hoehe, t1.AnzTischbeine, neuesGewicht, t1.Farbe, t1.Material);
+        }
+
+        /// <summary>
+        /// subtrahiert zwei Tische (Tische werden wieder getrennt)
+        /// </summary>
+        /// <param name="t1">zusammengestellter Tisch</param>
+        /// <param name="t2">alter Tisch2</param>
+        /// <returns>alter Tisch1; Tisch2 wird entfernt</returns>
+        public static Tisch operator - (Tisch t1, Tisch t2)
+        {
+            int neueLaenge = t1.Laenge - t2.Laenge;
+            double neuesGewicht = t1.Gewicht - t2.Gewicht;
+            return new Tisch(neueLaenge, t1.Breite, t1.Hoehe, t1.AnzTischbeine, neuesGewicht, t1.Farbe, t1.Material);
+        }
+
+        #endregion
+
     }
 }

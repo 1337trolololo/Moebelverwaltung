@@ -157,5 +157,36 @@ namespace BBW.Moebelverwaltung
             }
         }
 
+        public static int operator == (Schrank s)
+        {
+            int anzahlUebereinstimmungen = 0;
+            List<Schrank> sl = new List<Schrank>(6);
+
+            sl.Add(new Schrank(200, 40, 180));
+            sl.Add(new Schrank(210, 50, 190));
+            sl.Add(new Schrank(220, 60, 200));
+            sl.Add(new Schrank());
+            sl.Add(new Schrank();
+            sl.Add(new Schrank());
+
+            foreach (var item in sl)
+            {
+                if (s.Laenge == item.Laenge && s.Breite == item.Breite && s.Hoehe == item.Hoehe && s.Gewicht == item.Gewicht && s.Material == item.Material && s.Farbe == item.Farbe && s.AnzEinlegeboeden == item.AnzEinlegeboeden)
+                {
+                    anzahlUebereinstimmungen++;
+                }
+            }
+
+           
+            //prüft, ob alle Eigenschaften übereinstimmen
+            return ;
+
+        }
+
+        public static int operator != (Schrank s)
+        {            
+            return 1337;
+        }
+
     }
 }

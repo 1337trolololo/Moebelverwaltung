@@ -450,12 +450,75 @@ namespace BBW.Moebelverwaltung
 
             //if (pctisch1.Equals(pctisch2))
             //{
-            //    Console.WriteLine("Die Schreibtische sind gleich");
+            //    Console.WriteLine("Die Schreibtische sind gleich.");
             //}
             //else
             //{
-            //    Console.WriteLine("Die Schreibtische sind nicht gleich");
+            //    Console.WriteLine("Die Schreibtische sind nicht gleich.");
             //}
+            //Tisch tt = new Tisch();
+            //Tisch tt2 = tt.Clone();
+            //tt2.Material = Material.Glas;
+            //Console.WriteLine(tt.ToString());
+            //Console.WriteLine(tt2.ToString());
+
+
+            //Schrank testSchrank1 = new Schrank();
+            //Schrank testSchrank2 = testSchrank1.Clone();
+
+            Tisch esstisch1 = new Tisch(120, 90, 90, "blau");
+            Tisch esstisch2 = new Tisch(120, 90, 90, "rot");
+
+            //Verwendung der vorhandenen Referenzvariablen
+            esstisch1 = new Tisch(165, 65, 90, "schwarz");
+            esstisch2 = new Tisch(165, 65, 90, "schwarz");
+
+            Console.WriteLine("Vergleich mittels ==: ");
+
+            //wird "==" nicht überladen, werden nur die beiden Adressen der beiden Objekte miteinander verglichen
+            if (esstisch1 == esstisch2)
+            {
+                Console.WriteLine("Tische sind gleich");
+            }
+            else
+            {
+                Console.WriteLine("Tische sind ungleich");
+            }
+
+            if (esstisch1 != esstisch2)
+            {
+                Console.WriteLine("Tische sind ungleich");
+            }
+            else
+            {
+                Console.WriteLine("Tische sind gleich");
+            }
+
+            esstisch2.Farbe = "blau";
+
+            if (esstisch1 == esstisch2)
+            {
+                Console.WriteLine("Tische sind gleich");
+            }
+            else
+            {
+                Console.WriteLine("Tische sind ungleich");
+            }
+
+            if (esstisch1 != esstisch2)
+            {
+                Console.WriteLine("Tische sind ungleich");
+            }
+            else
+            {
+                Console.WriteLine("Tische sind gleich");
+            }
+
+            esstisch1 = esstisch1 + esstisch2;
+            Console.WriteLine("zusammengesetzter Tisch: {0}", esstisch1);
+            esstisch1 = esstisch1 - esstisch2;
+            Console.WriteLine("zusammengesetzter Tisch: {0}", esstisch1);
+
 
 
 
