@@ -522,6 +522,28 @@ namespace BBW.Moebelverwaltung
             Schrank testSchrank = new Schrank();
             Hilfsmethoden.Vergleichen(testSchrank);
 
+            List<Schrank> liste = new List<Schrank>();
+            liste.Add(new Schrank(180, 80, 200));
+            liste.Add(new Schrank(300, 80, 200));
+            liste.Add(new Schrank(150, 80, 180));
+            liste.Add(new Schrank());
+            liste.Add(new Schrank(300, 80, 200));
+            liste.Add(new Schrank());
+            liste.Add(new Schrank(300, 80, 200));
+            liste.Add(new Schrank(300, 80, 200));
+
+            Schrank gesuchterSchrank = new Schrank(300, 80, 200);
+            int anz = Hilfsmethoden.Vergleichen(gesuchterSchrank, liste);
+            if (anz == 0)
+            {
+                Console.WriteLine("nicht in der Liste");
+            }
+            else
+            {
+                Console.WriteLine("Anzahl: " + anz);
+            }
+
+
 
 
 
@@ -574,7 +596,7 @@ namespace BBW.Moebelverwaltung
         //    }
 
 
-            
+
         //}
 
     }
