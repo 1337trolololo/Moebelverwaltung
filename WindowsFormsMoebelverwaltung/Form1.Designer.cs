@@ -33,7 +33,9 @@
             this.btnAendern = new System.Windows.Forms.Button();
             this.labelHalloWelt = new System.Windows.Forms.Label();
             this.tabFormularTische = new System.Windows.Forms.TabPage();
-            this.txtHoehe = new System.Windows.Forms.NumericUpDown();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAnzeigen = new System.Windows.Forms.Button();
+            this.numHoehe = new System.Windows.Forms.NumericUpDown();
             this.labelTischbeine = new System.Windows.Forms.Label();
             this.cmbMaterial = new System.Windows.Forms.ComboBox();
             this.txtAnzahl = new System.Windows.Forms.TextBox();
@@ -47,25 +49,45 @@
             this.labelBreite = new System.Windows.Forms.Label();
             this.txtLaenge = new System.Windows.Forms.TextBox();
             this.labelLaenge = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnAnzeigen = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.tabSeite3 = new System.Windows.Forms.TabPage();
+            this.chkFormular = new System.Windows.Forms.CheckBox();
+            this.tabFormularSchraenke = new System.Windows.Forms.TabPage();
+            this.numSchrankHoehe = new System.Windows.Forms.NumericUpDown();
+            this.labelSchrankAnzahlBoeden = new System.Windows.Forms.Label();
+            this.cmbSchrankMaterial = new System.Windows.Forms.ComboBox();
+            this.txtSchrankAnzahlBoeden = new System.Windows.Forms.TextBox();
+            this.labelSchrankFarbe = new System.Windows.Forms.Label();
+            this.txtSchrankFarbe = new System.Windows.Forms.TextBox();
+            this.labelSchrankMaterial = new System.Windows.Forms.Label();
+            this.txtSchrankGewicht = new System.Windows.Forms.TextBox();
+            this.labelSchrankGewicht = new System.Windows.Forms.Label();
+            this.labelSchrankHoehe = new System.Windows.Forms.Label();
+            this.txtSchrankBreite = new System.Windows.Forms.TextBox();
+            this.labelSchrankBreite = new System.Windows.Forms.Label();
+            this.txtSchrankLaenge = new System.Windows.Forms.TextBox();
+            this.labelSchrankLaenge = new System.Windows.Forms.Label();
+            this.btnSchrankReset = new System.Windows.Forms.Button();
+            this.btnSchrankAnzeigen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAllgemein.SuspendLayout();
             this.tabFormularTische.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoehe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).BeginInit();
+            this.tabFormularSchraenke.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabAllgemein);
             this.tabControl1.Controls.Add(this.tabFormularTische);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabSeite3);
+            this.tabControl1.Controls.Add(this.tabFormularSchraenke);
             this.tabControl1.Location = new System.Drawing.Point(12, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1061, 464);
+            this.tabControl1.Size = new System.Drawing.Size(1061, 392);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabAllgemein
             // 
@@ -74,7 +96,7 @@
             this.tabAllgemein.Location = new System.Drawing.Point(4, 22);
             this.tabAllgemein.Name = "tabAllgemein";
             this.tabAllgemein.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAllgemein.Size = new System.Drawing.Size(1053, 438);
+            this.tabAllgemein.Size = new System.Drawing.Size(1053, 366);
             this.tabAllgemein.TabIndex = 0;
             this.tabAllgemein.Text = "Allgemeines";
             this.tabAllgemein.UseVisualStyleBackColor = true;
@@ -103,7 +125,7 @@
             // 
             this.tabFormularTische.Controls.Add(this.btnReset);
             this.tabFormularTische.Controls.Add(this.btnAnzeigen);
-            this.tabFormularTische.Controls.Add(this.txtHoehe);
+            this.tabFormularTische.Controls.Add(this.numHoehe);
             this.tabFormularTische.Controls.Add(this.labelTischbeine);
             this.tabFormularTische.Controls.Add(this.cmbMaterial);
             this.tabFormularTische.Controls.Add(this.txtAnzahl);
@@ -120,28 +142,48 @@
             this.tabFormularTische.Location = new System.Drawing.Point(4, 22);
             this.tabFormularTische.Name = "tabFormularTische";
             this.tabFormularTische.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFormularTische.Size = new System.Drawing.Size(1053, 438);
+            this.tabFormularTische.Size = new System.Drawing.Size(1053, 366);
             this.tabFormularTische.TabIndex = 1;
             this.tabFormularTische.Text = "Formular Tische";
             this.tabFormularTische.UseVisualStyleBackColor = true;
             // 
-            // txtHoehe
+            // btnReset
             // 
-            this.txtHoehe.Location = new System.Drawing.Point(99, 97);
-            this.txtHoehe.Maximum = new decimal(new int[] {
+            this.btnReset.Location = new System.Drawing.Point(178, 336);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnAnzeigen
+            // 
+            this.btnAnzeigen.Location = new System.Drawing.Point(96, 337);
+            this.btnAnzeigen.Name = "btnAnzeigen";
+            this.btnAnzeigen.Size = new System.Drawing.Size(75, 23);
+            this.btnAnzeigen.TabIndex = 15;
+            this.btnAnzeigen.Text = "Anzeigen";
+            this.btnAnzeigen.UseVisualStyleBackColor = true;
+            this.btnAnzeigen.Click += new System.EventHandler(this.btnAnzeigen_Click_1);
+            // 
+            // numHoehe
+            // 
+            this.numHoehe.Location = new System.Drawing.Point(96, 55);
+            this.numHoehe.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.txtHoehe.Minimum = new decimal(new int[] {
+            this.numHoehe.Minimum = new decimal(new int[] {
             20,
             0,
             0,
             0});
-            this.txtHoehe.Name = "txtHoehe";
-            this.txtHoehe.Size = new System.Drawing.Size(100, 20);
-            this.txtHoehe.TabIndex = 14;
-            this.txtHoehe.Value = new decimal(new int[] {
+            this.numHoehe.Name = "numHoehe";
+            this.numHoehe.Size = new System.Drawing.Size(100, 20);
+            this.numHoehe.TabIndex = 14;
+            this.numHoehe.Value = new decimal(new int[] {
             20,
             0,
             0,
@@ -151,7 +193,7 @@
             // 
             this.labelTischbeine.AutoSize = true;
             this.labelTischbeine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTischbeine.Location = new System.Drawing.Point(568, 47);
+            this.labelTischbeine.Location = new System.Drawing.Point(565, 5);
             this.labelTischbeine.Name = "labelTischbeine";
             this.labelTischbeine.Size = new System.Drawing.Size(89, 20);
             this.labelTischbeine.TabIndex = 13;
@@ -160,14 +202,14 @@
             // cmbMaterial
             // 
             this.cmbMaterial.FormattingEnabled = true;
-            this.cmbMaterial.Location = new System.Drawing.Point(380, 73);
+            this.cmbMaterial.Location = new System.Drawing.Point(377, 31);
             this.cmbMaterial.Name = "cmbMaterial";
             this.cmbMaterial.Size = new System.Drawing.Size(121, 21);
             this.cmbMaterial.TabIndex = 12;
             // 
             // txtAnzahl
             // 
-            this.txtAnzahl.Location = new System.Drawing.Point(658, 49);
+            this.txtAnzahl.Location = new System.Drawing.Point(655, 7);
             this.txtAnzahl.Name = "txtAnzahl";
             this.txtAnzahl.Size = new System.Drawing.Size(100, 20);
             this.txtAnzahl.TabIndex = 11;
@@ -176,7 +218,7 @@
             // 
             this.labelFarbe.AutoSize = true;
             this.labelFarbe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFarbe.Location = new System.Drawing.Point(290, 98);
+            this.labelFarbe.Location = new System.Drawing.Point(287, 56);
             this.labelFarbe.Name = "labelFarbe";
             this.labelFarbe.Size = new System.Drawing.Size(55, 20);
             this.labelFarbe.TabIndex = 10;
@@ -184,7 +226,7 @@
             // 
             // txtFarbe
             // 
-            this.txtFarbe.Location = new System.Drawing.Point(380, 100);
+            this.txtFarbe.Location = new System.Drawing.Point(377, 58);
             this.txtFarbe.Name = "txtFarbe";
             this.txtFarbe.Size = new System.Drawing.Size(100, 20);
             this.txtFarbe.TabIndex = 9;
@@ -193,7 +235,7 @@
             // 
             this.labelMaterial.AutoSize = true;
             this.labelMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMaterial.Location = new System.Drawing.Point(290, 71);
+            this.labelMaterial.Location = new System.Drawing.Point(287, 29);
             this.labelMaterial.Name = "labelMaterial";
             this.labelMaterial.Size = new System.Drawing.Size(69, 20);
             this.labelMaterial.TabIndex = 8;
@@ -201,7 +243,7 @@
             // 
             // txtGewicht
             // 
-            this.txtGewicht.Location = new System.Drawing.Point(380, 47);
+            this.txtGewicht.Location = new System.Drawing.Point(377, 5);
             this.txtGewicht.Name = "txtGewicht";
             this.txtGewicht.Size = new System.Drawing.Size(100, 20);
             this.txtGewicht.TabIndex = 7;
@@ -210,7 +252,7 @@
             // 
             this.labelGewicht.AutoSize = true;
             this.labelGewicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGewicht.Location = new System.Drawing.Point(290, 45);
+            this.labelGewicht.Location = new System.Drawing.Point(287, 3);
             this.labelGewicht.Name = "labelGewicht";
             this.labelGewicht.Size = new System.Drawing.Size(71, 20);
             this.labelGewicht.TabIndex = 6;
@@ -220,7 +262,7 @@
             // 
             this.labelHoehe.AutoSize = true;
             this.labelHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHoehe.Location = new System.Drawing.Point(9, 97);
+            this.labelHoehe.Location = new System.Drawing.Point(6, 55);
             this.labelHoehe.Name = "labelHoehe";
             this.labelHoehe.Size = new System.Drawing.Size(52, 20);
             this.labelHoehe.TabIndex = 4;
@@ -228,7 +270,7 @@
             // 
             // txtBreite
             // 
-            this.txtBreite.Location = new System.Drawing.Point(99, 73);
+            this.txtBreite.Location = new System.Drawing.Point(96, 31);
             this.txtBreite.Name = "txtBreite";
             this.txtBreite.Size = new System.Drawing.Size(100, 20);
             this.txtBreite.TabIndex = 3;
@@ -237,7 +279,7 @@
             // 
             this.labelBreite.AutoSize = true;
             this.labelBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBreite.Location = new System.Drawing.Point(9, 71);
+            this.labelBreite.Location = new System.Drawing.Point(6, 29);
             this.labelBreite.Name = "labelBreite";
             this.labelBreite.Size = new System.Drawing.Size(55, 20);
             this.labelBreite.TabIndex = 2;
@@ -245,7 +287,7 @@
             // 
             // txtLaenge
             // 
-            this.txtLaenge.Location = new System.Drawing.Point(99, 47);
+            this.txtLaenge.Location = new System.Drawing.Point(96, 5);
             this.txtLaenge.Name = "txtLaenge";
             this.txtLaenge.Size = new System.Drawing.Size(100, 20);
             this.txtLaenge.TabIndex = 1;
@@ -254,46 +296,220 @@
             // 
             this.labelLaenge.AutoSize = true;
             this.labelLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLaenge.Location = new System.Drawing.Point(9, 45);
+            this.labelLaenge.Location = new System.Drawing.Point(6, 3);
             this.labelLaenge.Name = "labelLaenge";
             this.labelLaenge.Size = new System.Drawing.Size(58, 20);
             this.labelLaenge.TabIndex = 0;
             this.labelLaenge.Text = "Länge:";
             // 
-            // tabPage1
+            // tabSeite3
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1053, 438);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabSeite3.Location = new System.Drawing.Point(4, 22);
+            this.tabSeite3.Name = "tabSeite3";
+            this.tabSeite3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSeite3.Size = new System.Drawing.Size(1053, 366);
+            this.tabSeite3.TabIndex = 2;
+            this.tabSeite3.Text = "Seite3";
+            this.tabSeite3.UseVisualStyleBackColor = true;
             // 
-            // btnAnzeigen
+            // chkFormular
             // 
-            this.btnAnzeigen.Location = new System.Drawing.Point(158, 220);
-            this.btnAnzeigen.Name = "btnAnzeigen";
-            this.btnAnzeigen.Size = new System.Drawing.Size(75, 23);
-            this.btnAnzeigen.TabIndex = 15;
-            this.btnAnzeigen.Text = "Anzeigen";
-            this.btnAnzeigen.UseVisualStyleBackColor = true;
-            this.btnAnzeigen.Click += new System.EventHandler(this.btnAnzeigen_Click_1);
+            this.chkFormular.AutoSize = true;
+            this.chkFormular.Location = new System.Drawing.Point(16, 445);
+            this.chkFormular.Name = "chkFormular";
+            this.chkFormular.Size = new System.Drawing.Size(128, 17);
+            this.chkFormular.TabIndex = 1;
+            this.chkFormular.Text = "Formulare beabeiten?";
+            this.chkFormular.UseVisualStyleBackColor = true;
+            this.chkFormular.CheckedChanged += new System.EventHandler(this.chkFormular_CheckedChanged);
             // 
-            // btnReset
+            // tabFormularSchraenke
             // 
-            this.btnReset.Location = new System.Drawing.Point(240, 219);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 16;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.tabFormularSchraenke.Controls.Add(this.btnSchrankReset);
+            this.tabFormularSchraenke.Controls.Add(this.btnSchrankAnzeigen);
+            this.tabFormularSchraenke.Controls.Add(this.numSchrankHoehe);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankAnzahlBoeden);
+            this.tabFormularSchraenke.Controls.Add(this.cmbSchrankMaterial);
+            this.tabFormularSchraenke.Controls.Add(this.txtSchrankAnzahlBoeden);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankFarbe);
+            this.tabFormularSchraenke.Controls.Add(this.txtSchrankFarbe);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankMaterial);
+            this.tabFormularSchraenke.Controls.Add(this.txtSchrankGewicht);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankGewicht);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankHoehe);
+            this.tabFormularSchraenke.Controls.Add(this.txtSchrankBreite);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankBreite);
+            this.tabFormularSchraenke.Controls.Add(this.txtSchrankLaenge);
+            this.tabFormularSchraenke.Controls.Add(this.labelSchrankLaenge);
+            this.tabFormularSchraenke.Location = new System.Drawing.Point(4, 22);
+            this.tabFormularSchraenke.Name = "tabFormularSchraenke";
+            this.tabFormularSchraenke.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFormularSchraenke.Size = new System.Drawing.Size(1053, 366);
+            this.tabFormularSchraenke.TabIndex = 3;
+            this.tabFormularSchraenke.Text = "Formular Schränke";
+            this.tabFormularSchraenke.UseVisualStyleBackColor = true;
+            // 
+            // numSchrankHoehe
+            // 
+            this.numSchrankHoehe.Location = new System.Drawing.Point(96, 55);
+            this.numSchrankHoehe.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numSchrankHoehe.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numSchrankHoehe.Name = "numSchrankHoehe";
+            this.numSchrankHoehe.Size = new System.Drawing.Size(100, 20);
+            this.numSchrankHoehe.TabIndex = 28;
+            this.numSchrankHoehe.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // labelSchrankAnzahlBoeden
+            // 
+            this.labelSchrankAnzahlBoeden.AutoSize = true;
+            this.labelSchrankAnzahlBoeden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankAnzahlBoeden.Location = new System.Drawing.Point(565, 5);
+            this.labelSchrankAnzahlBoeden.Name = "labelSchrankAnzahlBoeden";
+            this.labelSchrankAnzahlBoeden.Size = new System.Drawing.Size(113, 20);
+            this.labelSchrankAnzahlBoeden.TabIndex = 27;
+            this.labelSchrankAnzahlBoeden.Text = "Anzahl Böden:";
+            // 
+            // cmbSchrankMaterial
+            // 
+            this.cmbSchrankMaterial.FormattingEnabled = true;
+            this.cmbSchrankMaterial.Location = new System.Drawing.Point(377, 31);
+            this.cmbSchrankMaterial.Name = "cmbSchrankMaterial";
+            this.cmbSchrankMaterial.Size = new System.Drawing.Size(121, 21);
+            this.cmbSchrankMaterial.TabIndex = 26;
+            // 
+            // txtSchrankAnzahlBoeden
+            // 
+            this.txtSchrankAnzahlBoeden.Location = new System.Drawing.Point(684, 7);
+            this.txtSchrankAnzahlBoeden.Name = "txtSchrankAnzahlBoeden";
+            this.txtSchrankAnzahlBoeden.Size = new System.Drawing.Size(100, 20);
+            this.txtSchrankAnzahlBoeden.TabIndex = 25;
+            // 
+            // labelSchrankFarbe
+            // 
+            this.labelSchrankFarbe.AutoSize = true;
+            this.labelSchrankFarbe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankFarbe.Location = new System.Drawing.Point(287, 56);
+            this.labelSchrankFarbe.Name = "labelSchrankFarbe";
+            this.labelSchrankFarbe.Size = new System.Drawing.Size(55, 20);
+            this.labelSchrankFarbe.TabIndex = 24;
+            this.labelSchrankFarbe.Text = "Farbe:";
+            // 
+            // txtSchrankFarbe
+            // 
+            this.txtSchrankFarbe.Location = new System.Drawing.Point(377, 58);
+            this.txtSchrankFarbe.Name = "txtSchrankFarbe";
+            this.txtSchrankFarbe.Size = new System.Drawing.Size(100, 20);
+            this.txtSchrankFarbe.TabIndex = 23;
+            // 
+            // labelSchrankMaterial
+            // 
+            this.labelSchrankMaterial.AutoSize = true;
+            this.labelSchrankMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankMaterial.Location = new System.Drawing.Point(287, 29);
+            this.labelSchrankMaterial.Name = "labelSchrankMaterial";
+            this.labelSchrankMaterial.Size = new System.Drawing.Size(69, 20);
+            this.labelSchrankMaterial.TabIndex = 22;
+            this.labelSchrankMaterial.Text = "Material:";
+            // 
+            // txtSchrankGewicht
+            // 
+            this.txtSchrankGewicht.Location = new System.Drawing.Point(377, 5);
+            this.txtSchrankGewicht.Name = "txtSchrankGewicht";
+            this.txtSchrankGewicht.Size = new System.Drawing.Size(100, 20);
+            this.txtSchrankGewicht.TabIndex = 21;
+            // 
+            // labelSchrankGewicht
+            // 
+            this.labelSchrankGewicht.AutoSize = true;
+            this.labelSchrankGewicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankGewicht.Location = new System.Drawing.Point(287, 3);
+            this.labelSchrankGewicht.Name = "labelSchrankGewicht";
+            this.labelSchrankGewicht.Size = new System.Drawing.Size(71, 20);
+            this.labelSchrankGewicht.TabIndex = 20;
+            this.labelSchrankGewicht.Text = "Gewicht:";
+            // 
+            // labelSchrankHoehe
+            // 
+            this.labelSchrankHoehe.AutoSize = true;
+            this.labelSchrankHoehe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankHoehe.Location = new System.Drawing.Point(6, 55);
+            this.labelSchrankHoehe.Name = "labelSchrankHoehe";
+            this.labelSchrankHoehe.Size = new System.Drawing.Size(52, 20);
+            this.labelSchrankHoehe.TabIndex = 19;
+            this.labelSchrankHoehe.Text = "Höhe:";
+            // 
+            // txtSchrankBreite
+            // 
+            this.txtSchrankBreite.Location = new System.Drawing.Point(96, 31);
+            this.txtSchrankBreite.Name = "txtSchrankBreite";
+            this.txtSchrankBreite.Size = new System.Drawing.Size(100, 20);
+            this.txtSchrankBreite.TabIndex = 18;
+            // 
+            // labelSchrankBreite
+            // 
+            this.labelSchrankBreite.AutoSize = true;
+            this.labelSchrankBreite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankBreite.Location = new System.Drawing.Point(6, 29);
+            this.labelSchrankBreite.Name = "labelSchrankBreite";
+            this.labelSchrankBreite.Size = new System.Drawing.Size(55, 20);
+            this.labelSchrankBreite.TabIndex = 17;
+            this.labelSchrankBreite.Text = "Breite:";
+            // 
+            // txtSchrankLaenge
+            // 
+            this.txtSchrankLaenge.Location = new System.Drawing.Point(96, 5);
+            this.txtSchrankLaenge.Name = "txtSchrankLaenge";
+            this.txtSchrankLaenge.Size = new System.Drawing.Size(100, 20);
+            this.txtSchrankLaenge.TabIndex = 16;
+            // 
+            // labelSchrankLaenge
+            // 
+            this.labelSchrankLaenge.AutoSize = true;
+            this.labelSchrankLaenge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSchrankLaenge.Location = new System.Drawing.Point(6, 3);
+            this.labelSchrankLaenge.Name = "labelSchrankLaenge";
+            this.labelSchrankLaenge.Size = new System.Drawing.Size(58, 20);
+            this.labelSchrankLaenge.TabIndex = 15;
+            this.labelSchrankLaenge.Text = "Länge:";
+            // 
+            // btnSchrankReset
+            // 
+            this.btnSchrankReset.Location = new System.Drawing.Point(178, 336);
+            this.btnSchrankReset.Name = "btnSchrankReset";
+            this.btnSchrankReset.Size = new System.Drawing.Size(75, 23);
+            this.btnSchrankReset.TabIndex = 30;
+            this.btnSchrankReset.Text = "Reset";
+            this.btnSchrankReset.UseVisualStyleBackColor = true;
+            this.btnSchrankReset.Click += new System.EventHandler(this.btnSchrankReset_Click);
+            // 
+            // btnSchrankAnzeigen
+            // 
+            this.btnSchrankAnzeigen.Location = new System.Drawing.Point(96, 337);
+            this.btnSchrankAnzeigen.Name = "btnSchrankAnzeigen";
+            this.btnSchrankAnzeigen.Size = new System.Drawing.Size(75, 23);
+            this.btnSchrankAnzeigen.TabIndex = 29;
+            this.btnSchrankAnzeigen.Text = "Anzeigen";
+            this.btnSchrankAnzeigen.UseVisualStyleBackColor = true;
+            this.btnSchrankAnzeigen.Click += new System.EventHandler(this.btnSchrankAnzeigen_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 516);
+            this.Controls.Add(this.chkFormular);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -303,8 +519,12 @@
             this.tabAllgemein.PerformLayout();
             this.tabFormularTische.ResumeLayout(false);
             this.tabFormularTische.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHoehe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).EndInit();
+            this.tabFormularSchraenke.ResumeLayout(false);
+            this.tabFormularSchraenke.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -315,8 +535,8 @@
         private System.Windows.Forms.TabPage tabFormularTische;
         private System.Windows.Forms.Label labelHalloWelt;
         private System.Windows.Forms.Button btnAendern;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.NumericUpDown txtHoehe;
+        private System.Windows.Forms.TabPage tabSeite3;
+        private System.Windows.Forms.NumericUpDown numHoehe;
         private System.Windows.Forms.Label labelTischbeine;
         private System.Windows.Forms.ComboBox cmbMaterial;
         private System.Windows.Forms.TextBox txtAnzahl;
@@ -332,6 +552,24 @@
         private System.Windows.Forms.Label labelLaenge;
         private System.Windows.Forms.Button btnAnzeigen;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.CheckBox chkFormular;
+        private System.Windows.Forms.TabPage tabFormularSchraenke;
+        private System.Windows.Forms.NumericUpDown numSchrankHoehe;
+        private System.Windows.Forms.Label labelSchrankAnzahlBoeden;
+        private System.Windows.Forms.ComboBox cmbSchrankMaterial;
+        private System.Windows.Forms.TextBox txtSchrankAnzahlBoeden;
+        private System.Windows.Forms.Label labelSchrankFarbe;
+        private System.Windows.Forms.TextBox txtSchrankFarbe;
+        private System.Windows.Forms.Label labelSchrankMaterial;
+        private System.Windows.Forms.TextBox txtSchrankGewicht;
+        private System.Windows.Forms.Label labelSchrankGewicht;
+        private System.Windows.Forms.Label labelSchrankHoehe;
+        private System.Windows.Forms.TextBox txtSchrankBreite;
+        private System.Windows.Forms.Label labelSchrankBreite;
+        private System.Windows.Forms.TextBox txtSchrankLaenge;
+        private System.Windows.Forms.Label labelSchrankLaenge;
+        private System.Windows.Forms.Button btnSchrankReset;
+        private System.Windows.Forms.Button btnSchrankAnzeigen;
     }
 }
 
