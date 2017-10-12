@@ -157,6 +157,17 @@ namespace BBW.Moebelverwaltung
             }
         }
 
+        /// <summary>
+        /// berechnet das Fassungsvermögen in Litern
+        /// </summary>
+        /// <returns>Fassungsvermögen in Litern</returns>
+        public double GetVolumen()
+        {
+            //Laenge*Breite*Hoehe => cm³
+            //1cm³ = 1 ml = 0.001 l
+            return ((double)Laenge * Breite * Hoehe) / 1000.0;
+        }
+
         public static bool operator == (Schrank s1, Schrank s2)
         {       
             return s1.Laenge == s2.Laenge && s1.Breite == s2.Breite && s1.Hoehe == s2.Hoehe && s1.Gewicht == s2.Gewicht && s1.Material == s2.Material && s1.Farbe == s2.Farbe && s1.AnzEinlegeboeden == s2.AnzEinlegeboeden;            

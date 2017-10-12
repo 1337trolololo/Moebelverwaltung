@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE40C976-9B82-49F1-82C7-1A5D9B21CA0A}</ProjectGuid>
+    <ProjectGuid>{ADECED29-654C-4F8F-A67A-C3233E1630D4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MoebelverwaltungAnwendung</RootNamespace>
-    <AssemblyName>MoebelverwaltungAnwendung</AssemblyName>
+    <RootNamespace>MoebelverwaltungUebungC</RootNamespace>
+    <AssemblyName>MoebelverwaltungUebungC</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,9 +35,6 @@
   <ItemGroup>
     <Reference Include="Moebelverwaltung">
       <HintPath>..\Moebelverwaltung\bin\Debug\Moebelverwaltung.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\PrivateAssemblies\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
