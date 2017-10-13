@@ -81,6 +81,11 @@
             this.tabAnzeige = new System.Windows.Forms.TabPage();
             this.listBoxDateiinhalt = new System.Windows.Forms.ListBox();
             this.btnDateiLesen = new System.Windows.Forms.Button();
+            this.btnOeffnenExtern = new System.Windows.Forms.Button();
+            this.tabDB = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnDBAnzeigen = new System.Windows.Forms.Button();
+            this.btnSpeichernDB = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAllgemein.SuspendLayout();
             this.tabFormularTische.SuspendLayout();
@@ -90,6 +95,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).BeginInit();
             this.tabAnzeige.SuspendLayout();
+            this.tabDB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,6 +106,7 @@
             this.tabControl1.Controls.Add(this.tabSeite3);
             this.tabControl1.Controls.Add(this.tabFormularSchraenke);
             this.tabControl1.Controls.Add(this.tabAnzeige);
+            this.tabControl1.Controls.Add(this.tabDB);
             this.tabControl1.Location = new System.Drawing.Point(12, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -350,6 +358,7 @@
             // 
             // tabFormularSchraenke
             // 
+            this.tabFormularSchraenke.Controls.Add(this.btnSpeichernDB);
             this.tabFormularSchraenke.Controls.Add(this.btnSpeichernDatei);
             this.tabFormularSchraenke.Controls.Add(this.btnFarbauswahl);
             this.tabFormularSchraenke.Controls.Add(this.panel1);
@@ -619,6 +628,7 @@
             // 
             // tabAnzeige
             // 
+            this.tabAnzeige.Controls.Add(this.btnOeffnenExtern);
             this.tabAnzeige.Controls.Add(this.btnDateiLesen);
             this.tabAnzeige.Controls.Add(this.listBoxDateiinhalt);
             this.tabAnzeige.Location = new System.Drawing.Point(4, 22);
@@ -647,6 +657,57 @@
             this.btnDateiLesen.UseVisualStyleBackColor = true;
             this.btnDateiLesen.Click += new System.EventHandler(this.btnDateiLesen_Click);
             // 
+            // btnOeffnenExtern
+            // 
+            this.btnOeffnenExtern.Location = new System.Drawing.Point(138, 337);
+            this.btnOeffnenExtern.Name = "btnOeffnenExtern";
+            this.btnOeffnenExtern.Size = new System.Drawing.Size(142, 23);
+            this.btnOeffnenExtern.TabIndex = 2;
+            this.btnOeffnenExtern.Text = "externes Programm öffnen";
+            this.btnOeffnenExtern.UseMnemonic = false;
+            this.btnOeffnenExtern.UseVisualStyleBackColor = true;
+            this.btnOeffnenExtern.Click += new System.EventHandler(this.btnOeffnenExtern_Click);
+            // 
+            // tabDB
+            // 
+            this.tabDB.Controls.Add(this.btnDBAnzeigen);
+            this.tabDB.Controls.Add(this.dataGridView1);
+            this.tabDB.Location = new System.Drawing.Point(4, 22);
+            this.tabDB.Name = "tabDB";
+            this.tabDB.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDB.Size = new System.Drawing.Size(1053, 366);
+            this.tabDB.TabIndex = 5;
+            this.tabDB.Text = "Anzeige DB";
+            this.tabDB.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(526, 354);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // btnDBAnzeigen
+            // 
+            this.btnDBAnzeigen.Location = new System.Drawing.Point(722, 101);
+            this.btnDBAnzeigen.Name = "btnDBAnzeigen";
+            this.btnDBAnzeigen.Size = new System.Drawing.Size(75, 23);
+            this.btnDBAnzeigen.TabIndex = 1;
+            this.btnDBAnzeigen.Text = "Anzeigen";
+            this.btnDBAnzeigen.UseVisualStyleBackColor = true;
+            this.btnDBAnzeigen.Click += new System.EventHandler(this.btnDBAnzeigen_Click);
+            // 
+            // btnSpeichernDB
+            // 
+            this.btnSpeichernDB.Location = new System.Drawing.Point(370, 336);
+            this.btnSpeichernDB.Name = "btnSpeichernDB";
+            this.btnSpeichernDB.Size = new System.Drawing.Size(100, 23);
+            this.btnSpeichernDB.TabIndex = 37;
+            this.btnSpeichernDB.Text = "in DB speichern";
+            this.btnSpeichernDB.UseVisualStyleBackColor = true;
+            this.btnSpeichernDB.Click += new System.EventHandler(this.btnSpeichernDB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,6 +732,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).EndInit();
             this.tabAnzeige.ResumeLayout(false);
+            this.tabDB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,6 +794,11 @@
         private System.Windows.Forms.TabPage tabAnzeige;
         private System.Windows.Forms.Button btnDateiLesen;
         private System.Windows.Forms.ListBox listBoxDateiinhalt;
+        private System.Windows.Forms.Button btnOeffnenExtern;
+        private System.Windows.Forms.TabPage tabDB;
+        private System.Windows.Forms.Button btnDBAnzeigen;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSpeichernDB;
     }
 }
 

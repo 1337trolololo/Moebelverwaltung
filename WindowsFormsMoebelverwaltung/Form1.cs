@@ -1,4 +1,5 @@
 ﻿using BBW.Moebelverwaltung;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace WindowsFormsMoebelverwaltung
 {
@@ -397,6 +399,120 @@ namespace WindowsFormsMoebelverwaltung
                             sr.Close();
                         }
                     }
+                }
+            }
+
+        }
+
+        private void btnOeffnenExtern_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dateiOeffnen = new OpenFileDialog();
+            dateiOeffnen.InitialDirectory = Application.StartupPath;
+            //filtert die Auswahl von dateitypen
+            //Syntax: "Anzeige für Benutzer(z. B. CSV-Dateien(*.csv)|*.Dateiendung)
+            dateiOeffnen.Filter = "CSV-Dateien (*.csv)|*.csv|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+            if (dateiOeffnen.ShowDialog() == DialogResult.OK)
+            {                //Starten des externen Programmes
+                //es wird automatisch Standardprogramm verwendet
+                System.Diagnostics.Process.Start(dateiOeffnen.FileName);
+            }         
+
+        }
+
+        private void btnDBAnzeigen_Click(object sender, EventArgs e)
+        {
+            //benötigt, um sich mit der MySQL-DB zu verbinden
+            MySqlConnection conn = null;
+            //dient als Brücke zwischen DataSet und Datenbank
+            MySqlDataAdapter da = null;
+            //dient als Quelle z. B. für das DatagridView
+            DataSet ds = null;
+            //ConnectionString wird für die VErbindung zur DB benötigt
+            string connection = "Database=moebelverwaltung;Data Source=localhost;User Id=root";
+            try
+            {
+                //1. Erzeugung des Connection-Objektes
+                conn = new MySqlConnection(connection);
+                //2. SQL-Befehl definieren
+                string sql = "SELECT * FROM tische";
+                //3. Erzeugung des DataAdapter-Objektes
+                da = new MySqlDataAdapter(sql, conn);
+                //4. Erzeugung des DataSet-Objektes
+                ds = new DataSet();
+                //5. Füllen des DataSet-Objektes
+                //Syntax: da.Fill(DataSet, Aliasname_der_Tabelle)
+                da.Fill(ds, "Tische");
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Fehler bei ZUgriff auf die DB: " + ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    //6. Schließen der DB-Verbindung
+                    conn.Close();
+                }
+            }
+            //7. DataGridView mit DatSet verknüpfen
+            dataGridView1.DataSource = ds;
+            dataGridView1.DataMember = "tische";
+
+
+        }
+
+        private void btnSpeichernDB_Click(object sender, EventArgs e)
+        {
+            //Auslesen der Textfelder
+            string laenge = txtSchrankLaenge.Text;
+            string breite = txtSchrankBreite.Text;
+            string hoehe = numSchrankHoehe.Value.ToString();
+            string anzahlBoeden = txtSchrankAnzahlBoeden.Text;
+            string gewicht = txtSchrankGewicht.Text;
+            //gibt die Teilzeichenkette bis zum ersten Leerzeichen zurück
+            string farbe;
+            if (txtSchrankFarbe.Text.Contains(" "))
+            {
+                farbe = txtSchrankFarbe.Text.Substring(0, txtSchrankFarbe.Text.IndexOf(" "));
+            }
+            else
+            {
+                farbe = txtSchrankFarbe.Text;
+            }
+
+            string material = cmbSchrankMaterial.SelectedItem.ToString();
+            //Zusammensetzen des SQL-Befehls
+            string sql = "INSERT INTO tische (Laenge, Breite, Hoehe, AnzahlBoeden, Gewicht, Farbe, Material) VALUES (" + laenge + ","
+                                                                                                                        + breite + ","
+                                                                                                                        + hoehe + ","
+                                                                                                                        + anzahlBoeden + ","
+                                                                                                                        + gewicht + ",'"
+                                                                                                                        + farbe + "', '"
+                                                                                                                        + material + "');";
+
+
+             
+
+            MySqlConnection conn = new MySqlConnection("Database=moebelverwaltung;Data Source=localhost;User Id=root");
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                //Öffnen der VErbindung
+                conn.Open();
+                //Ausführen der INSERT INTO-Anweisung
+                //INSERT, DELETE, UPDATE sind keine Abfragen -> ExecuteNonQuery
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Fehler bei ZUgriff auf die DB: " + ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
                 }
             }
 
