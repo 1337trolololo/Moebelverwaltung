@@ -50,7 +50,11 @@
             this.txtLaenge = new System.Windows.Forms.TextBox();
             this.labelLaenge = new System.Windows.Forms.Label();
             this.tabSeite3 = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.txtAdresszeile = new System.Windows.Forms.TextBox();
             this.tabFormularSchraenke = new System.Windows.Forms.TabPage();
+            this.btnSpeichernDatei = new System.Windows.Forms.Button();
+            this.btnFarbauswahl = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioSchrankStandard = new System.Windows.Forms.RadioButton();
             this.radioSchrankBlau = new System.Windows.Forms.RadioButton();
@@ -72,15 +76,20 @@
             this.txtSchrankLaenge = new System.Windows.Forms.TextBox();
             this.labelSchrankLaenge = new System.Windows.Forms.Label();
             this.chkFormular = new System.Windows.Forms.CheckBox();
-            this.btnFarbauswahl = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.tabAnzeige = new System.Windows.Forms.TabPage();
+            this.listBoxDateiinhalt = new System.Windows.Forms.ListBox();
+            this.btnDateiLesen = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAllgemein.SuspendLayout();
             this.tabFormularTische.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).BeginInit();
+            this.tabSeite3.SuspendLayout();
             this.tabFormularSchraenke.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).BeginInit();
+            this.tabAnzeige.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +98,7 @@
             this.tabControl1.Controls.Add(this.tabFormularTische);
             this.tabControl1.Controls.Add(this.tabSeite3);
             this.tabControl1.Controls.Add(this.tabFormularSchraenke);
+            this.tabControl1.Controls.Add(this.tabAnzeige);
             this.tabControl1.Location = new System.Drawing.Point(12, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -311,6 +321,8 @@
             // 
             // tabSeite3
             // 
+            this.tabSeite3.Controls.Add(this.webBrowser1);
+            this.tabSeite3.Controls.Add(this.txtAdresszeile);
             this.tabSeite3.Location = new System.Drawing.Point(4, 22);
             this.tabSeite3.Name = "tabSeite3";
             this.tabSeite3.Padding = new System.Windows.Forms.Padding(3);
@@ -319,8 +331,26 @@
             this.tabSeite3.Text = "Seite3";
             this.tabSeite3.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(6, 30);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(1041, 321);
+            this.webBrowser1.TabIndex = 1;
+            // 
+            // txtAdresszeile
+            // 
+            this.txtAdresszeile.Location = new System.Drawing.Point(7, 4);
+            this.txtAdresszeile.Name = "txtAdresszeile";
+            this.txtAdresszeile.Size = new System.Drawing.Size(1040, 20);
+            this.txtAdresszeile.TabIndex = 0;
+            this.txtAdresszeile.Text = "http://";
+            this.txtAdresszeile.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAdresszeile_KeyDown);
+            // 
             // tabFormularSchraenke
             // 
+            this.tabFormularSchraenke.Controls.Add(this.btnSpeichernDatei);
             this.tabFormularSchraenke.Controls.Add(this.btnFarbauswahl);
             this.tabFormularSchraenke.Controls.Add(this.panel1);
             this.tabFormularSchraenke.Controls.Add(this.btnSchrankReset);
@@ -346,6 +376,26 @@
             this.tabFormularSchraenke.TabIndex = 3;
             this.tabFormularSchraenke.Text = "Formular Schränke";
             this.tabFormularSchraenke.UseVisualStyleBackColor = true;
+            // 
+            // btnSpeichernDatei
+            // 
+            this.btnSpeichernDatei.Location = new System.Drawing.Point(259, 336);
+            this.btnSpeichernDatei.Name = "btnSpeichernDatei";
+            this.btnSpeichernDatei.Size = new System.Drawing.Size(105, 23);
+            this.btnSpeichernDatei.TabIndex = 36;
+            this.btnSpeichernDatei.Text = "in Datei speichern";
+            this.btnSpeichernDatei.UseVisualStyleBackColor = true;
+            this.btnSpeichernDatei.Click += new System.EventHandler(this.btnSpeichernDatei_Click);
+            // 
+            // btnFarbauswahl
+            // 
+            this.btnFarbauswahl.Location = new System.Drawing.Point(798, 310);
+            this.btnFarbauswahl.Name = "btnFarbauswahl";
+            this.btnFarbauswahl.Size = new System.Drawing.Size(97, 23);
+            this.btnFarbauswahl.TabIndex = 35;
+            this.btnFarbauswahl.Text = "Farbe auswählen";
+            this.btnFarbauswahl.UseVisualStyleBackColor = true;
+            this.btnFarbauswahl.Click += new System.EventHandler(this.btnFarbauswahl_Click);
             // 
             // panel1
             // 
@@ -481,6 +531,8 @@
             this.txtSchrankFarbe.Name = "txtSchrankFarbe";
             this.txtSchrankFarbe.Size = new System.Drawing.Size(100, 20);
             this.txtSchrankFarbe.TabIndex = 23;
+            this.txtSchrankFarbe.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSchrankFarbe_KeyDown);
+            this.txtSchrankFarbe.Leave += new System.EventHandler(this.txtSchrankFarbe_Leave);
             // 
             // labelSchrankMaterial
             // 
@@ -565,14 +617,35 @@
             this.chkFormular.UseVisualStyleBackColor = true;
             this.chkFormular.CheckedChanged += new System.EventHandler(this.chkFormular_CheckedChanged);
             // 
-            // btnFarbauswahl
+            // tabAnzeige
             // 
-            this.btnFarbauswahl.Location = new System.Drawing.Point(798, 310);
-            this.btnFarbauswahl.Name = "btnFarbauswahl";
-            this.btnFarbauswahl.Size = new System.Drawing.Size(97, 23);
-            this.btnFarbauswahl.TabIndex = 35;
-            this.btnFarbauswahl.Text = "Farbe auswählen";
-            this.btnFarbauswahl.UseVisualStyleBackColor = true;
+            this.tabAnzeige.Controls.Add(this.btnDateiLesen);
+            this.tabAnzeige.Controls.Add(this.listBoxDateiinhalt);
+            this.tabAnzeige.Location = new System.Drawing.Point(4, 22);
+            this.tabAnzeige.Name = "tabAnzeige";
+            this.tabAnzeige.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAnzeige.Size = new System.Drawing.Size(1053, 366);
+            this.tabAnzeige.TabIndex = 4;
+            this.tabAnzeige.Text = "Anzeige Schränke";
+            this.tabAnzeige.UseVisualStyleBackColor = true;
+            // 
+            // listBoxDateiinhalt
+            // 
+            this.listBoxDateiinhalt.FormattingEnabled = true;
+            this.listBoxDateiinhalt.Location = new System.Drawing.Point(6, 6);
+            this.listBoxDateiinhalt.Name = "listBoxDateiinhalt";
+            this.listBoxDateiinhalt.Size = new System.Drawing.Size(451, 303);
+            this.listBoxDateiinhalt.TabIndex = 0;
+            // 
+            // btnDateiLesen
+            // 
+            this.btnDateiLesen.Location = new System.Drawing.Point(6, 337);
+            this.btnDateiLesen.Name = "btnDateiLesen";
+            this.btnDateiLesen.Size = new System.Drawing.Size(112, 23);
+            this.btnDateiLesen.TabIndex = 1;
+            this.btnDateiLesen.Text = "Dateiinhalt anzeigen";
+            this.btnDateiLesen.UseVisualStyleBackColor = true;
+            this.btnDateiLesen.Click += new System.EventHandler(this.btnDateiLesen_Click);
             // 
             // Form1
             // 
@@ -590,11 +663,14 @@
             this.tabFormularTische.ResumeLayout(false);
             this.tabFormularTische.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).EndInit();
+            this.tabSeite3.ResumeLayout(false);
+            this.tabSeite3.PerformLayout();
             this.tabFormularSchraenke.ResumeLayout(false);
             this.tabFormularSchraenke.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).EndInit();
+            this.tabAnzeige.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,6 +724,13 @@
         private System.Windows.Forms.RadioButton radioSchrankRot;
         private System.Windows.Forms.Button btnFarbauswahl;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.TextBox txtAdresszeile;
+        private System.Windows.Forms.Button btnSpeichernDatei;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TabPage tabAnzeige;
+        private System.Windows.Forms.Button btnDateiLesen;
+        private System.Windows.Forms.ListBox listBoxDateiinhalt;
     }
 }
 

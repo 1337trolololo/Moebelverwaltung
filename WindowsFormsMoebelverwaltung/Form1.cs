@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -66,6 +68,7 @@ namespace WindowsFormsMoebelverwaltung
                 cmbMaterial.Items.Add(item);
                 cmbSchrankMaterial.Items.Add(item);
             }
+            chkFormular.Checked = true;
             cmbMaterial.Text = "Bitte auswählen";
             cmbSchrankMaterial.Text = "Bitte auswählen";
             radioSchrankStandard.Checked = true;
@@ -195,6 +198,208 @@ namespace WindowsFormsMoebelverwaltung
                     (item as ComboBox).ForeColor = f;
                 }
             }
+        }
+
+        private void btnFarbauswahl_Click(object sender, EventArgs e)
+        {
+            //legt fest, ob benutzerdefinierte farben erstellt werden können
+            colorDialog1.AllowFullOpen = true;
+            //legt vorausgewählte Farbe fest
+            //Hintergrundfarbe des Tabs
+            colorDialog1.Color = tabFormularSchraenke.BackColor;
+
+            //prüft, ob Schaltfläche "OK" geklickt wurde
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Hintergrundfarbe für das Tab setzen
+                tabFormularSchraenke.BackColor = colorDialog1.Color;
+            }
+
+        }
+
+        private void txtSchrankFarbe_Leave(object sender, EventArgs e)
+        {
+            
+                //Farbnamen werden kleingeschrieben, dürfen nur Buchstaben enthalten, mind. 3 Buchstaben
+                //Prüfung mittels regulären Ausdrücken
+                //{min,max}, {min,}, {,max}, {genaue Anzahl}
+                string muster = "\\b[a-zäöüß]{3,}\\b";
+                //Regex-Objekt benötigt, das mit dem regulären Ausdruck initialisiert wird
+                Regex ausdruck = new Regex(muster);
+
+                if (ausdruck.IsMatch(txtSchrankFarbe.Text))
+                {
+                    MessageBox.Show("passt");
+                }
+                else
+                {
+                    MessageBox.Show("Farbnamen müssen klein geschrieben werden, dürfen nur Buchstaben enthalten und müssen mindestens 3 Zeichen lang sein!");
+                    txtFarbe.Text = "";
+                }
+            
+
+        }
+
+        private void txtSchrankFarbe_KeyDown(object sender, KeyEventArgs e)
+        {
+            //prüfen, ob Enter gedrückt wurde
+            if (e.KeyCode == Keys.Enter)
+            {
+                //Farbnamen werden kleingeschrieben, dürfen nur Buchstaben enthalten, mind. 3 Buchstaben
+                //Prüfung mittels regulären Ausdrücken
+                //{min,max}, {min,}, {,max}, {genaue Anzahl}
+                string muster = "\\b[a-zäöüß]{3,}\\b";
+                //Regex-Objekt benötigt, das mit dem regulären Ausdruck initialisiert wird
+                Regex ausdruck = new Regex(muster);
+
+                if (ausdruck.IsMatch(txtSchrankFarbe.Text))
+                {
+                    MessageBox.Show("passt");
+                }
+                else
+                {
+                    MessageBox.Show("Farbnamen müssen klein geschrieben werden, dürfen nur Buchstaben enthalten und müssen mindestens 3 Zeichen lang sein!");
+                    txtFarbe.Text = "";
+                }
+            }
+        }
+
+        private void txtAdresszeile_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //zuweisen der Webadresse an den Browser
+                webBrowser1.Url = new Uri(txtAdresszeile.Text);
+            }
+        }
+
+        private void btnSpeichernDatei_Click(object sender, EventArgs e)
+        {
+            string laenge = txtSchrankLaenge.Text;
+            string breite = txtSchrankBreite.Text;
+            string hoehe = numSchrankHoehe.Value.ToString();
+            string anzahlBoeden = txtSchrankAnzahlBoeden.Text;
+            string gewicht = txtSchrankGewicht.Text;
+            //gibt die Teilzeichenkette bis zum ersten Leerzeichen zurück
+            string farbe;
+            if (txtSchrankFarbe.Text.Contains(" "))
+            {
+                farbe = txtSchrankFarbe.Text.Substring(0, txtSchrankFarbe.Text.IndexOf(" "));
+            }
+            else
+            {
+                farbe = txtSchrankFarbe.Text;
+            }
+            
+            string material = cmbSchrankMaterial.SelectedItem.ToString();
+
+            //StringbUilder ist eine veränderliche Zeichenkette
+            StringBuilder sb = new StringBuilder();
+            
+
+            sb.Append(laenge);
+            sb.Append(";");
+            sb.Append(breite);
+            sb.Append(";");
+            sb.Append(hoehe);
+            sb.Append(";");
+            sb.Append(anzahlBoeden);
+            sb.Append(";");
+            sb.Append(gewicht);
+            sb.Append(";");
+            sb.Append(farbe);
+            sb.Append(";");
+            sb.Append(material);
+              
+
+            saveFileDialog1.InitialDirectory = Application.StartupPath;
+
+            //filtert die Auswahl von dateitypen
+            //Syntax: "Anzeige für Benutzer(z. B. CSV-Dateien(*.csv)|*.Dateiendung)
+            saveFileDialog1.Filter = "CSV-Dateien (*.csv)|*.csv|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sw = null;
+                //alle Anweisungen die Fehler verursachen könnten, werden in den try-Block geschrieben
+                try
+                {
+                    //Dateipfad in einer VAriable speichern
+                    string pfad = saveFileDialog1.FileName;
+                    //erzeugt ein StreamWriter-Objekt
+                    //2. PArameter gibt an, ob die Datei angehangen werden soll
+                    //ist die Datei nicht vorhanden, wird diese angelegt
+                    sw = new StreamWriter(pfad, true);
+                    //Schreiben des StringBuilder-Objektes in die
+                    sw.WriteLine(sb.ToString());
+                }
+                //catch-Blöcke behandeln Fehler
+                //catch-Blöcke von der spezifischten zur allgemeinsten Exception ordnen
+                catch (IOException ex)
+                {
+                    MessageBox.Show("Fehler bei Arbeit mit Dateien: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler: " + ex.Message);
+                    throw;
+                }
+                //finally-Block wird immer ausgeführt
+                finally
+                {
+                    if (sw != null)
+                    {
+                        sw.Close();
+                    }
+                }
+            }                        
+        }
+
+        private void btnDateiLesen_Click(object sender, EventArgs e)
+        {
+            //leeren der Listbox
+            listBoxDateiinhalt.Items.Clear();
+            //Erzeugen eines OpenFileDialoges
+            OpenFileDialog dateiOeffnen = new OpenFileDialog();
+
+            dateiOeffnen.InitialDirectory = Application.StartupPath;
+            //filtert die Auswahl von dateitypen
+            //Syntax: "Anzeige für Benutzer(z. B. CSV-Dateien(*.csv)|*.Dateiendung)
+            dateiOeffnen.Filter = "CSV-Dateien (*.csv)|*.csv|Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+            if (dateiOeffnen.ShowDialog() == DialogResult.OK)
+            {
+                string dateiname = dateiOeffnen.FileName;
+                //prüfen, ob es sich um Textdateien, CSV-Dateien handelt
+                if (dateiname.EndsWith(".txt") || dateiname.EndsWith(".csv"))
+                {
+                    StreamReader sr = new StreamReader(dateiname);
+                    string inhalt = "";
+                    try
+                    {
+                        //Erzeugen des StreamReader-Objektes
+                        sr = new StreamReader(dateiname);
+                        if (sr != null)
+                        {
+                            while ((inhalt = sr.ReadLine()) != null)
+                            {
+                                listBoxDateiinhalt.Items.Add(inhalt);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Fehler: " + ex.Message);
+                    }
+                    finally
+                    {
+                        if (sr != null)
+                        {
+                            sr.Close();
+                        }
+                    }
+                }
+            }
+
         }
 
         //private void labelHalloWelt_Click(object sender, EventArgs e)
