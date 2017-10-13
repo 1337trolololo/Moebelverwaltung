@@ -73,6 +73,7 @@
             this.labelSchrankLaenge = new System.Windows.Forms.Label();
             this.chkFormular = new System.Windows.Forms.CheckBox();
             this.btnFarbauswahl = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabControl1.SuspendLayout();
             this.tabAllgemein.SuspendLayout();
             this.tabFormularTische.SuspendLayout();
@@ -566,9 +567,9 @@
             // 
             // btnFarbauswahl
             // 
-            this.btnFarbauswahl.Location = new System.Drawing.Point(816, 313);
+            this.btnFarbauswahl.Location = new System.Drawing.Point(798, 310);
             this.btnFarbauswahl.Name = "btnFarbauswahl";
-            this.btnFarbauswahl.Size = new System.Drawing.Size(75, 23);
+            this.btnFarbauswahl.Size = new System.Drawing.Size(97, 23);
             this.btnFarbauswahl.TabIndex = 35;
             this.btnFarbauswahl.Text = "Farbe auswählen";
             this.btnFarbauswahl.UseVisualStyleBackColor = true;
@@ -646,6 +647,7 @@
         private System.Windows.Forms.RadioButton radioSchrankBlau;
         private System.Windows.Forms.RadioButton radioSchrankRot;
         private System.Windows.Forms.Button btnFarbauswahl;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
