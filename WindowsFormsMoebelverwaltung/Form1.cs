@@ -68,6 +68,7 @@ namespace WindowsFormsMoebelverwaltung
             }
             cmbMaterial.Text = "Bitte auswählen";
             cmbSchrankMaterial.Text = "Bitte auswählen";
+            radioSchrankStandard.Checked = true;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -100,19 +101,14 @@ namespace WindowsFormsMoebelverwaltung
                 //Weiterleitung an "Seite3"
                 tabControl1.SelectedTab = tabSeite3;
                 MessageBox.Show("Keine Rechte zum Anzeigen");
-            }
-            
-            
+            }             
             
         }
 
         private void chkFormular_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkFormular.Checked)
-            {                
-            }
-            else if ((!(chkFormular.Checked) && tabControl1.SelectedTab == tabFormularTische) || (!(chkFormular.Checked) && tabControl1.SelectedTab == tabFormularSchraenke))
-            {   
+            if ((!(chkFormular.Checked) && tabControl1.SelectedTab == tabFormularTische) || (!(chkFormular.Checked) && tabControl1.SelectedTab == tabFormularSchraenke))
+            {               
                 tabControl1.SelectedTab = tabAllgemein;
             }
         }
@@ -140,6 +136,65 @@ namespace WindowsFormsMoebelverwaltung
             string text = String.Format("Schrank: {0} cm x {1} cm x {2} cm", laenge, breite, hoehe);
             text += " Farbe: " + farbe + " Material: " + material + " Einlegeböden: " + anzahlBoeden;
             MessageBox.Show(text);
+        }
+
+       
+
+        private void radioSchrankStandard_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSchrankStandard.Checked)
+            {
+                SchrankSchriftFarbeAendern(Color.Black);
+            }
+        }
+
+
+
+        private void radioSchrankRot_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSchrankRot.Checked)
+            {
+                SchrankSchriftFarbeAendern(Color.Red);
+            }
+        }
+
+        private void radioSchrankBlau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioSchrankBlau.Checked)
+            {
+                SchrankSchriftFarbeAendern(Color.Blue);
+            }
+        }
+
+        private void SchrankSchriftFarbeAendern(Color f)
+        {
+            //txtSchrankLaenge.ForeColor = f;
+            //txtSchrankBreite.ForeColor = f;
+            //numSchrankHoehe.ForeColor = f;
+            //txtSchrankAnzahlBoeden.ForeColor = f;
+            //txtSchrankGewicht.ForeColor = f;
+            //txtSchrankFarbe.ForeColor = f;
+            //cmbSchrankMaterial.ForeColor = f;
+
+            foreach (var item in tabFormularSchraenke.Controls)
+            {
+                if (item is Label)
+                {
+                    (item as Label).ForeColor = f;
+                }
+                else if (item is TextBox)
+                {
+                    (item as TextBox).ForeColor = f;
+                }
+                else if (item is NumericUpDown)
+                {
+                    (item as NumericUpDown).ForeColor = f;
+                }
+                else if (item is ComboBox)
+                {
+                    (item as ComboBox).ForeColor = f;
+                }
+            }
         }
 
         //private void labelHalloWelt_Click(object sender, EventArgs e)

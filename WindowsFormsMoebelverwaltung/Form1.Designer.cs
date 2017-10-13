@@ -50,8 +50,13 @@
             this.txtLaenge = new System.Windows.Forms.TextBox();
             this.labelLaenge = new System.Windows.Forms.Label();
             this.tabSeite3 = new System.Windows.Forms.TabPage();
-            this.chkFormular = new System.Windows.Forms.CheckBox();
             this.tabFormularSchraenke = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radioSchrankStandard = new System.Windows.Forms.RadioButton();
+            this.radioSchrankBlau = new System.Windows.Forms.RadioButton();
+            this.radioSchrankRot = new System.Windows.Forms.RadioButton();
+            this.btnSchrankReset = new System.Windows.Forms.Button();
+            this.btnSchrankAnzeigen = new System.Windows.Forms.Button();
             this.numSchrankHoehe = new System.Windows.Forms.NumericUpDown();
             this.labelSchrankAnzahlBoeden = new System.Windows.Forms.Label();
             this.cmbSchrankMaterial = new System.Windows.Forms.ComboBox();
@@ -66,13 +71,14 @@
             this.labelSchrankBreite = new System.Windows.Forms.Label();
             this.txtSchrankLaenge = new System.Windows.Forms.TextBox();
             this.labelSchrankLaenge = new System.Windows.Forms.Label();
-            this.btnSchrankReset = new System.Windows.Forms.Button();
-            this.btnSchrankAnzeigen = new System.Windows.Forms.Button();
+            this.chkFormular = new System.Windows.Forms.CheckBox();
+            this.btnFarbauswahl = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabAllgemein.SuspendLayout();
             this.tabFormularTische.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).BeginInit();
             this.tabFormularSchraenke.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -312,19 +318,10 @@
             this.tabSeite3.Text = "Seite3";
             this.tabSeite3.UseVisualStyleBackColor = true;
             // 
-            // chkFormular
-            // 
-            this.chkFormular.AutoSize = true;
-            this.chkFormular.Location = new System.Drawing.Point(16, 445);
-            this.chkFormular.Name = "chkFormular";
-            this.chkFormular.Size = new System.Drawing.Size(128, 17);
-            this.chkFormular.TabIndex = 1;
-            this.chkFormular.Text = "Formulare beabeiten?";
-            this.chkFormular.UseVisualStyleBackColor = true;
-            this.chkFormular.CheckedChanged += new System.EventHandler(this.chkFormular_CheckedChanged);
-            // 
             // tabFormularSchraenke
             // 
+            this.tabFormularSchraenke.Controls.Add(this.btnFarbauswahl);
+            this.tabFormularSchraenke.Controls.Add(this.panel1);
             this.tabFormularSchraenke.Controls.Add(this.btnSchrankReset);
             this.tabFormularSchraenke.Controls.Add(this.btnSchrankAnzeigen);
             this.tabFormularSchraenke.Controls.Add(this.numSchrankHoehe);
@@ -348,6 +345,77 @@
             this.tabFormularSchraenke.TabIndex = 3;
             this.tabFormularSchraenke.Text = "Formular Schränke";
             this.tabFormularSchraenke.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioSchrankStandard);
+            this.panel1.Controls.Add(this.radioSchrankBlau);
+            this.panel1.Controls.Add(this.radioSchrankRot);
+            this.panel1.Location = new System.Drawing.Point(947, 282);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 78);
+            this.panel1.TabIndex = 34;
+            // 
+            // radioSchrankStandard
+            // 
+            this.radioSchrankStandard.AutoSize = true;
+            this.radioSchrankStandard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSchrankStandard.Location = new System.Drawing.Point(3, 3);
+            this.radioSchrankStandard.Name = "radioSchrankStandard";
+            this.radioSchrankStandard.Size = new System.Drawing.Size(93, 24);
+            this.radioSchrankStandard.TabIndex = 31;
+            this.radioSchrankStandard.TabStop = true;
+            this.radioSchrankStandard.Text = "Standard";
+            this.radioSchrankStandard.UseVisualStyleBackColor = true;
+            this.radioSchrankStandard.CheckedChanged += new System.EventHandler(this.radioSchrankStandard_CheckedChanged);
+            // 
+            // radioSchrankBlau
+            // 
+            this.radioSchrankBlau.AutoSize = true;
+            this.radioSchrankBlau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSchrankBlau.ForeColor = System.Drawing.Color.Blue;
+            this.radioSchrankBlau.Location = new System.Drawing.Point(3, 49);
+            this.radioSchrankBlau.Name = "radioSchrankBlau";
+            this.radioSchrankBlau.Size = new System.Drawing.Size(59, 24);
+            this.radioSchrankBlau.TabIndex = 33;
+            this.radioSchrankBlau.TabStop = true;
+            this.radioSchrankBlau.Text = "Blau";
+            this.radioSchrankBlau.UseVisualStyleBackColor = true;
+            this.radioSchrankBlau.CheckedChanged += new System.EventHandler(this.radioSchrankBlau_CheckedChanged);
+            // 
+            // radioSchrankRot
+            // 
+            this.radioSchrankRot.AutoSize = true;
+            this.radioSchrankRot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSchrankRot.ForeColor = System.Drawing.Color.Red;
+            this.radioSchrankRot.Location = new System.Drawing.Point(3, 26);
+            this.radioSchrankRot.Name = "radioSchrankRot";
+            this.radioSchrankRot.Size = new System.Drawing.Size(53, 24);
+            this.radioSchrankRot.TabIndex = 32;
+            this.radioSchrankRot.TabStop = true;
+            this.radioSchrankRot.Text = "Rot";
+            this.radioSchrankRot.UseVisualStyleBackColor = true;
+            this.radioSchrankRot.CheckedChanged += new System.EventHandler(this.radioSchrankRot_CheckedChanged);
+            // 
+            // btnSchrankReset
+            // 
+            this.btnSchrankReset.Location = new System.Drawing.Point(178, 336);
+            this.btnSchrankReset.Name = "btnSchrankReset";
+            this.btnSchrankReset.Size = new System.Drawing.Size(75, 23);
+            this.btnSchrankReset.TabIndex = 30;
+            this.btnSchrankReset.Text = "Reset";
+            this.btnSchrankReset.UseVisualStyleBackColor = true;
+            this.btnSchrankReset.Click += new System.EventHandler(this.btnSchrankReset_Click);
+            // 
+            // btnSchrankAnzeigen
+            // 
+            this.btnSchrankAnzeigen.Location = new System.Drawing.Point(96, 337);
+            this.btnSchrankAnzeigen.Name = "btnSchrankAnzeigen";
+            this.btnSchrankAnzeigen.Size = new System.Drawing.Size(75, 23);
+            this.btnSchrankAnzeigen.TabIndex = 29;
+            this.btnSchrankAnzeigen.Text = "Anzeigen";
+            this.btnSchrankAnzeigen.UseVisualStyleBackColor = true;
+            this.btnSchrankAnzeigen.Click += new System.EventHandler(this.btnSchrankAnzeigen_Click);
             // 
             // numSchrankHoehe
             // 
@@ -484,25 +552,26 @@
             this.labelSchrankLaenge.TabIndex = 15;
             this.labelSchrankLaenge.Text = "Länge:";
             // 
-            // btnSchrankReset
+            // chkFormular
             // 
-            this.btnSchrankReset.Location = new System.Drawing.Point(178, 336);
-            this.btnSchrankReset.Name = "btnSchrankReset";
-            this.btnSchrankReset.Size = new System.Drawing.Size(75, 23);
-            this.btnSchrankReset.TabIndex = 30;
-            this.btnSchrankReset.Text = "Reset";
-            this.btnSchrankReset.UseVisualStyleBackColor = true;
-            this.btnSchrankReset.Click += new System.EventHandler(this.btnSchrankReset_Click);
+            this.chkFormular.AutoSize = true;
+            this.chkFormular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFormular.Location = new System.Drawing.Point(16, 445);
+            this.chkFormular.Name = "chkFormular";
+            this.chkFormular.Size = new System.Drawing.Size(184, 24);
+            this.chkFormular.TabIndex = 1;
+            this.chkFormular.Text = "Formulare beabeiten?";
+            this.chkFormular.UseVisualStyleBackColor = true;
+            this.chkFormular.CheckedChanged += new System.EventHandler(this.chkFormular_CheckedChanged);
             // 
-            // btnSchrankAnzeigen
+            // btnFarbauswahl
             // 
-            this.btnSchrankAnzeigen.Location = new System.Drawing.Point(96, 337);
-            this.btnSchrankAnzeigen.Name = "btnSchrankAnzeigen";
-            this.btnSchrankAnzeigen.Size = new System.Drawing.Size(75, 23);
-            this.btnSchrankAnzeigen.TabIndex = 29;
-            this.btnSchrankAnzeigen.Text = "Anzeigen";
-            this.btnSchrankAnzeigen.UseVisualStyleBackColor = true;
-            this.btnSchrankAnzeigen.Click += new System.EventHandler(this.btnSchrankAnzeigen_Click);
+            this.btnFarbauswahl.Location = new System.Drawing.Point(816, 313);
+            this.btnFarbauswahl.Name = "btnFarbauswahl";
+            this.btnFarbauswahl.Size = new System.Drawing.Size(75, 23);
+            this.btnFarbauswahl.TabIndex = 35;
+            this.btnFarbauswahl.Text = "Farbe auswählen";
+            this.btnFarbauswahl.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -522,6 +591,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHoehe)).EndInit();
             this.tabFormularSchraenke.ResumeLayout(false);
             this.tabFormularSchraenke.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSchrankHoehe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -570,6 +641,11 @@
         private System.Windows.Forms.Label labelSchrankLaenge;
         private System.Windows.Forms.Button btnSchrankReset;
         private System.Windows.Forms.Button btnSchrankAnzeigen;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioSchrankStandard;
+        private System.Windows.Forms.RadioButton radioSchrankBlau;
+        private System.Windows.Forms.RadioButton radioSchrankRot;
+        private System.Windows.Forms.Button btnFarbauswahl;
     }
 }
 
